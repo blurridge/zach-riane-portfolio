@@ -1,12 +1,13 @@
 ---
 import zrmLogo from "public/zrm_logo.svg";
 import { NavbarComponent } from "@/components/react-components/Navbar";
+import { Image } from "astro:assets";
 ---
 
 <NavbarComponent>
-  <img
+  <Image
     class="ml-2"
-    src={zrmLogo.src}
+    src={zrmLogo}
     width="100"
     alt="Zach Riane Machacon logo"
   />
