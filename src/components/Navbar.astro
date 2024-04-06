@@ -1,20 +1,21 @@
 ---
-import zrmLogo from "../../public/zrm_logo.svg";
+import zrmLogo from "public/zrm_logo.svg";
+import { NavbarComponent } from "@/components/react-components/Navbar";
 ---
 
-<nav class="w-screen flex justify-between shadow-lg">
+<NavbarComponent>
   <img
     class="ml-2"
     src={zrmLogo.src}
     width="100"
     alt="Zach Riane Machacon logo"
   />
-  <div class="flex items-center justify-center gap-3 font-bold text-xl">
+  <div
+    class="flex items-center justify-center gap-10 font-medium text-lg mr-10"
+  >
     <span>About</span>
     <span>Experience</span>
     <span>Portfolio</span>
+    <span>Contact</span>
   </div>
-  <div>
-    
-  </div>
-</nav>
+</NavbarComponent>

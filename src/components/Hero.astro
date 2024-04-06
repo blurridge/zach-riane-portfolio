@@ -1,3 +1,94 @@
 ---
+import zachImage from "public/zach.png";
+import Greeting from "@/components/react-components/Greeting.tsx";
 ---
 
+<section class="h-full relative">
+  <div class="custom-shape-divider-top-1712416951">
+    <svg
+      data-name="Layer 1"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1200 120"
+      preserveAspectRatio="none"
+    >
+      <path
+        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+        class="shape-fill"></path>
+    </svg>
+  </div>
+  <div class="flex hero-gradient items-center justify-between">
+    <img class="ml-36" src={zachImage.src} />
+    <div class="flex flex-col gap-3 mr-36">
+      <Greeting client:load />
+      <span class="text-7xl font-normal ml-4">I'm Zach Riane Machacon</span>
+      <span
+        class="bg-gradient-to-r from-white to-light-purple text-2xl font-normal ml-5 max-w-fit px-3 py-1 rounded-xl"
+        >21 years old | Filipino | Data Science | Web Development</span
+      >
+    </div>
+  </div>
+  <div class="custom-shape-divider-bottom-1712417925">
+    <svg
+      data-name="Layer 2"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 1200 120"
+      preserveAspectRatio="none"
+    >
+      <path
+        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+        class="shape-fill"></path>
+    </svg>
+  </div>
+</section>
+
+<style>
+  .custom-shape-divider-top-1712416951 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .custom-shape-divider-top-1712416951 svg {
+    position: relative;
+    display: block;
+    width: calc(101% + 1.3px);
+    height: 90px;
+  }
+
+  .custom-shape-divider-top-1712416951 .shape-fill {
+    fill: #ffffff;
+  }
+
+  .custom-shape-divider-bottom-1712417925 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+  }
+
+  .custom-shape-divider-bottom-1712417925 svg {
+    position: relative;
+    display: block;
+    width: calc(123% + 1.3px);
+    height: 120px;
+  }
+
+  .custom-shape-divider-bottom-1712417925 .shape-fill {
+    fill: #ffffff;
+  }
+
+  .hero-gradient {
+    background: rgb(79, 16, 145);
+    background: linear-gradient(
+      90deg,
+      rgba(79, 16, 145, 1) 0%,
+      rgba(255, 255, 255, 1) 60%
+    );
+  }
+</style>

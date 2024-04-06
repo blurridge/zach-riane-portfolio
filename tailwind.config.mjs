@@ -4,8 +4,14 @@ module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     extend: {
+      colors: {
+        "light-purple": "#C7BEF5",
+        "light-blue": "#EDF3FE",
+        "dark-purple": "#340b61",
+        "hiyo-purple": "#4F1091",
+      },
       fontFamily: {
-        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        sans: ["Montserrat Variable", ...defaultTheme.fontFamily.sans],
       },
     },
   },
