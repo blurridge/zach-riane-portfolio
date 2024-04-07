@@ -17,7 +17,7 @@ export const NavbarComponent = ({ children }: NavbarProps) => {
   return (
     <>
       <nav
-        className={`sticky left-0 top-0 right-0 z-20 w-screen flex justify-between bg-white ${
+        className={`fixed top-0 left-0 right-0 z-50 w-screen flex justify-between bg-white ${
           !top && `shadow-lg`
         }`}
       >

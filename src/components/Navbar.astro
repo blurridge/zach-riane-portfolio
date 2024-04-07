@@ -1,10 +1,10 @@
 ---
-import zrmLogo from "public/zrm_logo.svg";
+import zrmLogo from "@/images/zrm_logo.svg";
 import { NavbarComponent } from "@/components/react-components/Navbar";
 import { Image } from "astro:assets";
 ---
 
-<NavbarComponent>
+<NavbarComponent client:load>
   <Image
     class="ml-2"
     src={zrmLogo}
