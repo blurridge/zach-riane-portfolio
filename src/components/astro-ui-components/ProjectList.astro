@@ -1,0 +1,76 @@
+---
+import ProjectCard from "@/components/astro-ui-components/ProjectCard.astro";
+export interface Project {
+  title: string;
+  tools: string[];
+  duration: string;
+  description: string[];
+  link: string;
+  image: string;
+}
+const projectsArray: Project[] = [
+  {
+    title:
+      "Image Classification of Omnivores and Herbivores using the CIFAR-100 Dataset",
+    tools: ["Python", "TensorFlow"],
+    duration: "03/2024",
+    description: [
+      "The project aims to classify images into two categories: omnivores and herbivores, utilizing the CIFAR-100 dataset.",
+      "After 300 epochs of initial training and transfer learning, the model yielded testing accuracy of 0.79, accompanied by a testing loss of 1.53.",
+    ],
+    link: "https://github.com/blurridge/cifar-omni-herbi-ml",
+    image: "/cifar.png",
+  },
+  {
+    title: "Project Taytayan - A Centralized Hub for Trainings and Jobs",
+    tools: ["Next.js", "Tailwind", "Firebase"],
+    duration: "01/2024",
+    description: [
+      "The web application provides a platform for users to browse, and register for different local trainings to upskill themselves on their preferred areas of interest.",
+      "The web application also provides a means for training centers and professionals to extend their expertise regarding different subject matters and help open up employment opportunities for out-of-school youth within the local community.",
+      "This project was submitted to the 2024 Google Solutions Challenge.",
+    ],
+    link: "https://github.com/Lavelliane/project-taytayan-next",
+    image: "/taytayan.png",
+  },
+  {
+    title: "Accred - An On-demand Event E-Certificate Generator Web App",
+    tools: ["Next.js", "Tailwind", "Firebase"],
+    duration: "05/2023",
+    description: [
+      "Accred automates the certificate generation process and eliminates the need for storing them in the cloud.",
+      "It generates certificates on-demand, ensuring that no unnecessary data is stored and saving valuable storage space.",
+      "Used in PyCon PH 2024, and in Google Developer Student Clubs - University of San Carlos events.",
+    ],
+    link: "https://github.com/blurridge/Accred",
+    image: "/accred.png",
+  },
+  {
+    title: "Singapore Exchange Derivative Downloader",
+    tools: ["Python"],
+    duration: "05/2023",
+    description: [
+      "A Python script which downloads daily derivatives from Singapore Exchange.",
+      "It accepts Linux commands and config files.",
+    ],
+    link: "https://github.com/blurridge/sgx-derivative-downloader",
+    image: "/sgx.png",
+  },
+  {
+    title:
+      "Predicting Filipino Students' Employability Based on Mock Interview Results",
+    tools: ["Python", "Sci-kit Learn"],
+    duration: "05/2023",
+    description: [
+      "A machine learning project predicting Filipino Student employability through Mock Interview Results using Logistic Regression, K-Nearest Neighbors, and Support Vector Machine.",
+      "K-Nearest Neighbor Clasification managed to get the highest accuracy at around 87%, followed by Support Vector Machine (RBF) at 86%, Logistic Regression at 60%, and Support Vector Machine (Linear) at 59%.",
+    ],
+    link: "https://github.com/blurridge/ph-student-employability-ml",
+    image: "/mock.png",
+  },
+];
+---
+
+<div class="w-[90vw] flex flex-row flex-wrap justify-center items-center gap-4">
+  {projectsArray.map((project) => <ProjectCard project={project} />)}
+</div>
