@@ -1,5 +1,6 @@
 ---
 import ProjectList from "@/components/astro-ui-components/ProjectList.astro";
+import { ExternalLink } from "lucide-react";
 ---
 
 <section class="w-screen mt-10">
@@ -8,5 +9,12 @@ import ProjectList from "@/components/astro-ui-components/ProjectList.astro";
       >featured projects.</span
     >
     <ProjectList />
+    <a
+      href="https://github.com/blurridge"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="font-bold text-black hover:text-gray-600 hover:scale-105 flex gap-2"
+      >View all projects <ExternalLink /></a
+    >
   </div>
 </section>

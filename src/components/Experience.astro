@@ -1,4 +1,5 @@
 ---
+import { ExternalLink } from "lucide-react";
 import ExperienceList from "@/components/astro-ui-components/ExperienceList.astro";
 ---
 
@@ -8,5 +9,12 @@ import ExperienceList from "@/components/astro-ui-components/ExperienceList.astr
       >experience.</span
     >
     <ExperienceList />
+    <a
+      href="https://flowcv.com/resume/8tva6o2rts"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="font-bold text-black hover:text-gray-600 hover:scale-105 flex gap-2"
+      >View full resume <ExternalLink /></a
+    >
   </div>
 </section>
