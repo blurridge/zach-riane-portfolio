@@ -46,7 +46,7 @@ export const ExperienceCard = ({ experience, align }: ExperienceCardProps) => {
             {experience.title}
           </h2>
           <h3 className={`text-xl ${textAlignClass}`}>{experience.company}</h3>
-          <h3 className={`text-xl ${textAlignClass}`}>{experience.duration}</h3>
+          <h3 className={`text-lg ${textAlignClass}`}>{experience.duration}</h3>
           <ul className="list-disc pl-5">
             {experience.description.map((sentence, index) => (
               <li key={index} className={`text-lg ${textAlignClass}`}>

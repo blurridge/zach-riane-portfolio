@@ -29,12 +29,14 @@ const TypingEffect = () => {
 
   useEffect(() => {
     if (subIndex === greetings[index].length + 1 && !reverse) {
-      setReverse(true);
-      setTimeout(() => setReverse(false), 2000);
+      // Wait before starting to delete the text
+      setTimeout(() => setReverse(true), 2000);
       return;
     }
 
     if (subIndex === 0 && reverse) {
+      // Immediately after finishing deleting, start typing the next greeting
+      setReverse(false);
       setIndex((prev) => (prev + 1) % greetings.length);
       return;
     }
