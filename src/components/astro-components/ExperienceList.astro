@@ -1,5 +1,5 @@
-import { ExperienceCard } from "@/components/react-components/ExperienceCard";
-
+---
+import ExperienceCard from "@/components/astro-components/ExperienceCard.astro";
 export interface Experience {
   title: string;
   company: string;
@@ -60,17 +60,15 @@ const experienceArray: Experience[] = [
     link: "",
   },
 ];
+---
 
-export const ExperienceComponent = () => {
-  return (
-    <div className="w-screen flex flex-col">
-      {experienceArray.map((experience, index) => (
-        <ExperienceCard
-          key={index}
-          experience={experience}
-          align={index % 2 === 0 ? "right" : "left"}
-        />
-      ))}
-    </div>
-  );
-};
+<div class="w-screen flex flex-col">
+  {
+    experienceArray.map((experience, index) => (
+      <ExperienceCard
+        experience={experience}
+        align={index % 2 === 0 ? "right" : "left"}
+      />
+    ))
+  }
+</div>
