@@ -5,12 +5,14 @@ import { Image } from "astro:assets";
 ---
 
 <NavbarComponent client:load>
-  <Image
-    class="ml-2"
-    src={zrmLogo}
-    width="100"
-    alt="Zach Riane Machacon logo"
-  />
+  <a href="#">
+    <Image
+      class="ml-2"
+      src={zrmLogo}
+      width="100"
+      alt="Zach Riane Machacon logo"
+    />
+  </a>
   <div
     class="flex items-center justify-center gap-10 font-medium text-lg mr-10"
   >
