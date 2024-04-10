@@ -1,24 +1,5 @@
 ---
-import zrmLogo from "@/images/zrm_logo.svg";
 import { NavbarComponent } from "@/components/react-ui-components/Navbar";
-import { Image } from "astro:assets";
 ---
 
-<NavbarComponent client:load>
-  <a href="#">
-    <Image
-      class="ml-2"
-      src={zrmLogo}
-      width="100"
-      alt="Zach Riane Machacon logo"
-    />
-  </a>
-  <div
-    class="flex items-center justify-center gap-10 font-medium text-lg mr-10"
-  >
-    <a href="#about" class="hover:text-gray-600">About</a>
-    <a href="#experience" class="hover:text-gray-600">Experience</a>
-    <a href="#projects" class="hover:text-gray-600">Projects</a>
-    <a href="#contact" class="hover:text-gray-600">Contact</a>
-  </div>
-</NavbarComponent>
+<NavbarComponent client:only="react" />
