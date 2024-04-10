@@ -1,4 +1,4 @@
-import { isMobile, isMobileMenuOpen, isTop } from "@/stores/store";
+import { isMobile, isMobileMenuOpen, isTop } from "@/stores/navStore";
 import { useStore } from "@nanostores/react";
 import { Menu } from "lucide-react";
 import { Transition } from "@headlessui/react";

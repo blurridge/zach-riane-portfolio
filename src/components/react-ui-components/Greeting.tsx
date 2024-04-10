@@ -1,52 +1,30 @@
-import { useEffect, useState } from "react";
-
-const greetings = [
-  "Hello!",
-  "Hola!",
-  "Bonjour!",
-  "Hallo!",
-  "Ciao!",
-  "こんにちは!",
-  "안녕하세요!",
-  "Привет!",
-  "Olá!",
-  "नमस्ते!",
-];
-const typingSpeed = 200; // milliseconds
+import { useStore } from "@nanostores/react";
+import {
+  greetings,
+  typingIndex,
+  typingSubIndex,
+  typingReverse,
+  typingBlink,
+  handleTypingEffect,
+  initializeTypingEffect,
+} from "@/stores/greetingStore"; // Assuming your store.ts file is in the same directory
+import { useEffect } from "react";
 
 const TypingEffect = () => {
-  const [index, setIndex] = useState(0);
-  const [subIndex, setSubIndex] = useState(0);
-  const [reverse, setReverse] = useState(false);
-  const [blink, setBlink] = useState(true);
+  const index = useStore(typingIndex);
+  const subIndex = useStore(typingSubIndex);
+  const reverse = useStore(typingReverse);
+  const blink = useStore(typingBlink);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setBlink((prev) => !prev);
-    }, 500);
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    if (subIndex === greetings[index].length + 1 && !reverse) {
-      // Wait before starting to delete the text
-      setTimeout(() => setReverse(true), 2000);
-      return;
-    }
-
-    if (subIndex === 0 && reverse) {
-      // Immediately after finishing deleting, start typing the next greeting
-      setReverse(false);
-      setIndex((prev) => (prev + 1) % greetings.length);
-      return;
-    }
-
-    const timeout = setTimeout(() => {
-      setSubIndex((prev) => prev + (reverse ? -1 : 1));
-    }, Math.max(reverse ? 75 : typingSpeed, Math.random() * 350));
-
-    return () => clearTimeout(timeout);
+    const typingEffectTimer = handleTypingEffect();
+    return () => typingEffectTimer();
   }, [subIndex, index, reverse]);
+
+  useEffect(() => {
+    const blinkingInterval = initializeTypingEffect();
+    return () => clearInterval(blinkingInterval);
+  }, []);
 
   return (
     <span className="text-7xl font-extrabold text-black px-4 whitespace-nowrap overflow-hidden min-h-[80px]">
