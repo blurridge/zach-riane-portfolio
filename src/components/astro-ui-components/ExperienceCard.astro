@@ -36,29 +36,23 @@ const justifyContentClass = align === "left" ? "justify-end" : "justify-start";
         class="shape-fill"></path>
     </svg>
   </div>
-  <div class="bg-white w-[70vh] p-5">
-    <h2 class={`text-xl font-bold ${textAlignClass}`}>
+  <div class="bg-white md:w-[40vw] p-5">
+    <h2 class={`md:text-lg lg:text-xl font-bold ${textAlignClass}`}>
       {experience.title}
     </h2>
-    <h3 class={`text-lg ${textAlignClass}`}>{experience.company}</h3>
-    <h3 class={`text-lg ${textAlignClass}`}>{experience.duration}</h3>
+    <h3 class={`md:text-md lg:text-lg ${textAlignClass}`}>
+      {experience.company}
+    </h3>
+    <h3 class={`md:text-md lg:text-lg ${textAlignClass}`}>
+      {experience.duration}
+    </h3>
     <ul class="list-disc pl-5">
       {
         experience.description.map((sentence) => (
-          <li class={`text-md ${textAlignClass}`}>{sentence}</li>
+          <li class={`md:text-sm lg:text-md ${textAlignClass}`}>{sentence}</li>
         ))
       }
     </ul>
-    {
-      experience.link && (
-        <a
-          href={experience.link}
-          class="underline text-blue-600 hover:text-blue-800"
-        >
-          Learn more
-        </a>
-      )
-    }
   </div>
   <div class="custom-shape-divider-bottom-1712539240">
     <svg

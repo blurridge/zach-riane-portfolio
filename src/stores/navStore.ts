@@ -5,7 +5,7 @@ export const isTop = atom(true);
 export const isMobileMenuOpen = atom(false);
 
 const handleResize = () => {
-  isMobile.set(window.innerWidth <= 768);
+  isMobile.set(window.innerWidth < 768);
 };
 
 window.addEventListener("resize", handleResize);
