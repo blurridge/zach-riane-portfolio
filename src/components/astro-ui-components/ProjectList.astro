@@ -26,8 +26,8 @@ const projectsArray: Project[] = [
     tools: ["Next.js", "Tailwind", "Firebase"],
     duration: "01/2024",
     description: [
-      "The web application provides a platform for users to browse, and register for different local trainings to upskill themselves on their preferred areas of interest.",
-      "The web application also provides a means for training centers and professionals to extend their expertise regarding different subject matters and help open up employment opportunities for out-of-school youth within the local community.",
+      "The web application provides a platform for users to register for different local trainings.",
+      "The web application also provides a means for training centers and professionals to help open up employment opportunities for out-of-school youth within the local community through upskilling.",
       "This project was submitted to the 2024 Google Solutions Challenge.",
     ],
     link: "https://github.com/Lavelliane/project-taytayan-next",
@@ -82,6 +82,6 @@ const projectsArray: Project[] = [
 ];
 ---
 
-<div class="w-[90vw] flex flex-row flex-wrap justify-center items-center gap-4">
+<div class="w-full flex flex-row flex-wrap justify-center items-center gap-4">
   {projectsArray.map((project) => <ProjectCard project={project} />)}
 </div>
