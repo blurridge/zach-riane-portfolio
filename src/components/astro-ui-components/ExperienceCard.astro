@@ -14,7 +14,7 @@ const justifyContentClass = align === "left" ? "justify-end" : "justify-start";
 ---
 
 <section
-  class={`${gradientClass} ${justifyContentClass} flex items-center relative my-4 ${containerPadding} h-full py-36`}
+  class={`${gradientClass} ${justifyContentClass} flex items-center relative my-4 ${containerPadding} h-full py-28`}
 >
   <div class="custom-shape-divider-top-1712539321">
     <svg
@@ -36,20 +36,20 @@ const justifyContentClass = align === "left" ? "justify-end" : "justify-start";
         class="shape-fill"></path>
     </svg>
   </div>
-  <div class="bg-white md:w-[40vw] p-5">
-    <h2 class={`md:text-lg lg:text-xl font-bold ${textAlignClass}`}>
+  <div class="bg-white sm:w-[50%] p-5">
+    <h2 class={`sm:text-md md:text-lg lg:text-2xl font-bold ${textAlignClass}`}>
       {experience.title}
     </h2>
-    <h3 class={`md:text-md lg:text-lg ${textAlignClass}`}>
+    <h3 class={`sm:text-sm md:text-md lg:text-xl ${textAlignClass}`}>
       {experience.company}
     </h3>
-    <h3 class={`md:text-md lg:text-lg ${textAlignClass}`}>
+    <h3 class={`sm:text-sm md:text-md lg:text-xl ${textAlignClass}`}>
       {experience.duration}
     </h3>
     <ul class="list-disc pl-5">
       {
         experience.description.map((sentence) => (
-          <li class={`md:text-sm lg:text-md ${textAlignClass}`}>{sentence}</li>
+          <li class={`sm:text-sm lg:text-lg ${textAlignClass}`}>{sentence}</li>
         ))
       }
     </ul>
