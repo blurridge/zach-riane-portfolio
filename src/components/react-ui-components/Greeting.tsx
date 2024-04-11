@@ -27,7 +27,7 @@ const TypingEffect = () => {
   }, []);
 
   return (
-    <span className="sm:text-6xl lg:text-7xl font-extrabold text-black px-4 whitespace-nowrap overflow-hidden min-h-[80px]">
+    <span className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-black px-4 whitespace-nowrap overflow-hidden min-h-[80px]">
       {`${greetings[index].substring(0, subIndex)}${blink ? "|" : " "}`}
     </span>
   );

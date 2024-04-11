@@ -4,11 +4,15 @@ import { Image } from "astro:assets";
 
 <section class="w-full h-[35vh] mt-10">
   <div class="flex flex-col items-center gap-5">
-    <span class="bg-hiyo-purple text-white p-2 text-5xl font-bold">tools.</span>
-    <div
-      class="sm:w-[70%] md:w-full text-center flex flex-col justify-center items-center gap-3"
+    <span class="bg-hiyo-purple text-white px-3 text-3xl sm:text-5xl font-bold"
+      >tools.</span
     >
-      <div class="flex gap-4">
+    <div
+      class="w-full h-full text-center flex flex-wrap justify-center items-center gap-3"
+    >
+      <div
+        class="w-full md:w-[80%] lg:w-[60%] flex flex-wrap justify-center items-center gap-4"
+      >
         <a href="https://pytorch.org/" target="_blank" rel="noreferrer">
           <Image
             src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg"
@@ -73,12 +77,6 @@ import { Image } from "astro:assets";
             height="70"
           />
         </a>
-      </div>
-    </div>
-    <div
-      class="sm:w-[70%] md:w-full text-center flex flex-col justify-center items-center gap-3"
-    >
-      <div class="flex gap-4">
         <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer">
           <Image
             src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg"
@@ -155,12 +153,6 @@ import { Image } from "astro:assets";
             height="70"
           />
         </a>
-      </div>
-    </div>
-    <div
-      class="sm:w-[70%] md:w-full text-center flex flex-col justify-center items-center gap-3"
-    >
-      <div class="flex gap-4">
         <a href="https://www.java.com" target="_blank" rel="noreferrer">
           <Image
             src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg"
@@ -210,5 +202,12 @@ import { Image } from "astro:assets";
   a {
     @apply hover:scale-110; /* Adjusts the scale to 110% on hover */
     @apply transition-all;
+  }
+
+  @media (max-width: 767px) {
+    a img,
+    a svg {
+      max-width: 40px;
+    }
   }
 </style>
