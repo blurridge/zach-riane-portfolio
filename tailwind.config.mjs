@@ -12,10 +12,6 @@ module.exports = {
           "linear-gradient(90deg, rgba(79, 16, 145, 1) 0%, rgba(255, 255, 255, 1) 50%)",
         "left-gradient":
           "linear-gradient(270deg, rgba(79, 16, 145, 1) 0%, rgba(255, 255, 255, 1) 50%)",
-        "right-gradient-sm":
-          "linear-gradient(90deg, rgba(79, 16, 145, 1) 0%, rgba(255, 255, 255, 1) 40%)",
-        "left-gradient-sm":
-          "linear-gradient(270deg, rgba(79, 16, 145, 1) 0%, rgba(255, 255, 255, 1) 40%)",
       },
       colors: {
         "light-purple": "#C7BEF5",
