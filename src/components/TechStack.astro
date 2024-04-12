@@ -2,7 +2,7 @@
 import { Image } from "astro:assets";
 ---
 
-<section class="w-full h-[35vh] mt-10">
+<section class="w-full h-[35vh] mt-10 mb-40">
   <div class="flex flex-col items-center gap-5">
     <span class="bg-hiyo-purple text-white px-3 text-3xl sm:text-5xl font-bold"
       >tools.</span
@@ -11,7 +11,7 @@ import { Image } from "astro:assets";
       class="w-full h-full text-center flex flex-wrap justify-center items-center gap-3"
     >
       <div
-        class="w-full md:w-[80%] lg:w-[60%] flex flex-wrap justify-center items-center gap-4"
+        class="w-[90%] md:w-[80%] lg:w-[60%] xl:w-[40%] flex flex-wrap justify-center items-center gap-4"
       >
         <a href="https://pytorch.org/" target="_blank" rel="noreferrer">
           <Image
@@ -204,10 +204,10 @@ import { Image } from "astro:assets";
     @apply transition-all;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 640px) {
     a img,
     a svg {
-      max-width: 40px;
+      max-width: 50px;
     }
   }
 </style>

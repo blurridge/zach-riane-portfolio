@@ -9,7 +9,9 @@ import { Image } from "astro:assets";
 >
   <div class="flex flex-col text-center gap-3 mt-36">
     <Greeting client:load />
-    <span class="text-lg sm:text-3xl md:text-4xl lg:text-5xl font-semibold w-full">
+    <span
+      class="text-lg sm:text-3xl md:text-4xl lg:text-5xl font-semibold w-full"
+    >
       I'm <span class="bg-hiyo-purple text-white px-3">Zach</span>. Bridging
       leadership, data, <br /> and the web for continuous growth.</span
     >
@@ -56,5 +58,29 @@ import { Image } from "astro:assets";
   .image-gradient > * {
     position: relative;
     z-index: 3;
+  }
+
+  @media only screen and (max-width: 1024px) {
+    .image-gradient {
+      position: relative;
+      background: rgb(79, 16, 145);
+      background: radial-gradient(
+        circle at center bottom,
+        rgba(79, 16, 145, 1) 0%,
+        rgba(255, 255, 255, 1) 43%
+      );
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .image-gradient {
+      position: relative;
+      background: rgb(79, 16, 145);
+      background: radial-gradient(
+        circle at center bottom,
+        rgba(79, 16, 145, 1) 0%,
+        rgba(255, 255, 255, 1) 40%
+      );
+    }
   }
 </style>
