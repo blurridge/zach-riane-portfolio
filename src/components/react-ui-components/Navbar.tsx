@@ -2,7 +2,7 @@ import { isMobile, isMobileMenuOpen, isTop } from "@/stores/navStore";
 import { useStore } from "@nanostores/react";
 import { Menu } from "lucide-react";
 import { Transition } from "@headlessui/react";
-import zrmLogo from "@/images/zrm_logo.svg";
+import zrmLogo from "@/assets/zrm_logo.svg";
 import { X } from "lucide-react";
 
 export const NavbarComponent = () => {

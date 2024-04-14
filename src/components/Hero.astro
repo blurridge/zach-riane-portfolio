@@ -1,5 +1,5 @@
 ---
-import zachImage from "@/images/zach.png";
+import zachImage from "@/assets/zach.png";
 import Greeting from "@/components/react-ui-components/Greeting.tsx";
 import { Image } from "astro:assets";
 ---
@@ -16,7 +16,13 @@ import { Image } from "astro:assets";
       leadership, data, <br /> and the web for continuous growth.</span
     >
   </div>
-  <Image src={zachImage} alt="Zach Riane Machacon" width={700} id="about" />
+  <Image
+    src={zachImage}
+    alt="Zach Riane Machacon"
+    width={700}
+    id="about"
+    loading="eager"
+  />
 </section>
 
 <style>
