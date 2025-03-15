@@ -1,28 +1,18 @@
 ---
-import zachImage from "@/assets/zach.png";
-import Greeting from "@/components/Greeting.astro";
-import { Image } from "astro:assets";
+import zachImage from '@/assets/zach.png';
+import Greeting from '@/components/Greeting.astro';
+import { Image } from 'astro:assets';
 ---
 
-<section
-  class="h-screen flex flex-col justify-between items-center image-gradient z-0"
->
+<section class="h-screen flex flex-col justify-between items-center image-gradient z-0">
   <div class="flex flex-col text-center gap-3 mt-36">
     <Greeting />
-    <span
-      class="text-lg sm:text-3xl md:text-4xl lg:text-5xl font-semibold w-full"
-    >
-      I'm <span class="bg-hiyo-purple text-white px-3">Zach</span>. Bridging
-      leadership, data, <br /> and the web for continuous growth.</span
+    <span class="text-lg sm:text-3xl md:text-4xl lg:text-5xl font-semibold w-full">
+      I'm <span class="bg-hiyo-purple text-white px-3">Zach</span>. Bridging leadership, data, <br
+      /> and the web for continuous growth.</span
     >
   </div>
-  <Image
-    src={zachImage}
-    alt="Zach Riane Machacon"
-    width={700}
-    id="about"
-    loading="eager"
-  />
+  <Image src={zachImage} alt="Zach Riane Machacon" width={700} id="about" loading="eager" />
 </section>
 
 <style>
@@ -37,7 +27,7 @@ import { Image } from "astro:assets";
   }
 
   .image-gradient::before {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -51,7 +41,7 @@ import { Image } from "astro:assets";
   }
 
   .image-gradient::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;

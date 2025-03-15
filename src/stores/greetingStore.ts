@@ -1,16 +1,16 @@
-import { atom } from "nanostores";
+import { atom } from 'nanostores';
 
 export const greetings = [
-  "Hello!",
-  "Hola!",
-  "Bonjour!",
-  "Hallo!",
-  "Ciao!",
-  "こんにちは!",
-  "안녕하세요!",
-  "Привет!",
-  "Olá!",
-  "नमस्ते!",
+  'Hello!',
+  'Hola!',
+  'Bonjour!',
+  'Hallo!',
+  'Ciao!',
+  'こんにちは!',
+  '안녕하세요!',
+  'Привет!',
+  'Olá!',
+  'नमस्ते!',
 ];
 
 // Atoms for managing typing effect state

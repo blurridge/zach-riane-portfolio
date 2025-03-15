@@ -1,0 +1,36 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+dist/
+.astro/
+build/
+
+# Cache and logs
+.cache/
+.temp/
+.log/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# MacOS-specific files
+.DS_Store
+
+# Lockfiles
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Editor directories and files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw? 

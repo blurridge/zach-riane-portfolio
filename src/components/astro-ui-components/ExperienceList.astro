@@ -1,9 +1,12 @@
 ---
-import ExperienceCard from "@/components/astro-ui-components/ExperienceCard.astro";
-import { experiences } from "@/data/experiences";
+import ExperienceCard from '@/components/astro-ui-components/ExperienceCard.astro';
+import { experiences } from '@/data/experiences';
 ---
 
-<section id="experience" class="w-full relative bg-gradient-to-br from-hiyo-purple via-purple-800 to-purple-900 overflow-hidden">
+<section
+  id="experience"
+  class="w-full relative bg-gradient-to-br from-hiyo-purple via-purple-800 to-purple-900 overflow-hidden"
+>
   <div class="custom-shape-divider-top-1712891365">
     <svg
       data-name="Layer 1"
@@ -24,7 +27,7 @@ import { experiences } from "@/data/experiences";
         class="shape-fill"></path>
     </svg>
   </div>
-  
+
   <div class="content-container py-16 md:py-20">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -38,7 +41,7 @@ import { experiences } from "@/data/experiences";
       </div>
     </div>
   </div>
-  
+
   <div class="custom-shape-divider-bottom-1712891342">
     <svg
       data-name="Layer 1"
@@ -82,7 +85,7 @@ import { experiences } from "@/data/experiences";
   .custom-shape-divider-top-1712891365 .shape-fill {
     fill: #ffffff;
   }
-  
+
   .custom-shape-divider-bottom-1712891342 {
     position: absolute;
     bottom: -1px;
@@ -104,23 +107,23 @@ import { experiences } from "@/data/experiences";
   .custom-shape-divider-bottom-1712891342 .shape-fill {
     fill: #ffffff;
   }
-  
+
   .content-container {
     position: relative;
     z-index: 10;
   }
-  
+
   #experience {
     margin-bottom: 0;
     padding-bottom: 0;
   }
-  
+
   .card-animation {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.6s ease-out forwards;
   }
-  
+
   @keyframes fadeInUp {
     from {
       opacity: 0;

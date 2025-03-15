@@ -2,17 +2,20 @@
 // Astro component that uses the existing nanostores for typing effect
 ---
 
-<span id="greeting-text" class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-black px-4 whitespace-nowrap overflow-hidden min-h-[80px]"></span>
+<span
+  id="greeting-text"
+  class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-black px-4 whitespace-nowrap overflow-hidden min-h-[80px]"
+></span>
 
 <script>
-  import { 
-    greetings, 
-    typingIndex, 
-    typingSubIndex, 
-    typingReverse, 
+  import {
+    greetings,
+    typingIndex,
+    typingSubIndex,
+    typingReverse,
     typingBlink,
     handleTypingBlink,
-    typingEffectConfig
+    typingEffectConfig,
   } from '@/stores/greetingStore';
 
   // DOM element
@@ -24,7 +27,7 @@
       const index = typingIndex.get();
       const subIndex = typingSubIndex.get();
       const blink = typingBlink.get();
-      
+
       const currentText = greetings[index].substring(0, subIndex);
       greetingTextEl.textContent = `${currentText}${blink ? '|' : ' '}`;
     }
@@ -77,14 +80,14 @@
     typingIndex.set(0);
     typingSubIndex.set(0);
     typingReverse.set(false);
-    
+
     // Initial rendering
     updateGreetingText();
-    
+
     // Start the typing effect
     runTypingEffect();
-    
+
     // Start the cursor blinking
     setInterval(handleTypingBlink, 500);
   });
-</script> 
+</script>

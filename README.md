@@ -46,6 +46,32 @@ Start the server
   npm run dev
 ```
 
+## Code Formatting
+
+This project uses Prettier for code formatting and Husky for pre-commit hooks. This ensures that all code is consistently formatted before being committed to the repository.
+
+### Format on Save
+
+For the best development experience, you can set up your editor to format on save:
+
+- **VS Code**: Install the Prettier extension and add this to your settings:
+  ```json
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  ```
+
+### Manual Formatting
+
+You can manually format all files in the project by running:
+
+```bash
+npm run format
+```
+
+### Pre-commit Formatting
+
+The project is set up with Husky and lint-staged to automatically format changed files when you commit them. This happens automatically and requires no additional steps.
+
 ## Stay in touch
 
 If you have any questions, suggestions, or opportunities to offer, feel free to reach out to me. I'm always happy to help!
