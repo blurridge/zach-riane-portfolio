@@ -1,5 +1,5 @@
 ---
-import type { Project } from "@/components/astro-ui-components/ProjectList.astro";
+import type { Project } from "@/data/projects";
 import { Image } from "astro:assets";
 import type { ImageMetadata } from 'astro';
 interface Props {
@@ -8,47 +8,131 @@ interface Props {
 
 const { project } = Astro.props;
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  "../../assets/*.{jpeg,jpg,png,gif}"
+  "/src/assets/*.{jpeg,jpg,png,gif,svg}"
 );
-if (!images[project.image])
+
+const imagePath = `/src/assets/${project.image}`;
+
+if (!images[imagePath]) {
   throw new Error(
-    `"${project.image}" does not exist in glob: "@/assets/*.{jpeg,jpg,png,gif}"`
+    `"${imagePath}" does not exist in glob: "/src/assets/*.{jpeg,jpg,png,gif,svg}"`
   );
+}
 ---
 
-<a
-  href={project.link}
-  class="bg-white w-[90vw] h-[60vh] md:w-[40vw] md:h-[70vh] 2xl:h-[60vh] rounded-2xl shadow-lg flex flex-col overflow-hidden transform transition duration-300 hover:scale-[0.98] hover:bg-gray-100"
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <Image
-      src={images[project.image]()}
-      alt={`Image for ${project.title}`}
-      class="h-1/3 2xl:h-1/2 w-full object-cover"
-    />
-  <div class="flex flex-col p-5 space-y-3 flex-grow justify-between">
-    <div>
-      <h2 class="text-sm sm:text-md xl:text-lg font-bold">
-        {project.title}
-      </h2>
-      <h3 class="text-xs m:text-sm xl:text-md">{project.duration}</h3>
-      <ul class="list-disc pl-5 overflow-auto">
-        {
-          project.description.map((sentence) => (
-            <li class="text-2xs sm:text-xs xl:text-sm">{sentence}</li>
-          ))
-        }
-      </ul>
+<div class="project-card h-full w-full">
+  <div class="card-inner bg-white rounded-xl shadow-lg overflow-hidden h-full flex flex-col transform transition-all duration-500 hover:shadow-2xl">
+    <div class="relative">
+      <Image
+        src={images[imagePath]()}
+        alt={`Image for ${project.title}`}
+        width={600}
+        height={300}
+        class="w-full h-48 object-cover"
+      />
+      <div class="absolute bottom-0 right-0 p-2">
+        <div class="date-badge flex-shrink-0 text-xs font-medium text-purple-700 bg-purple-50 py-1 px-3 rounded-full border border-purple-100 shadow-sm">
+          {project.duration}
+        </div>
+      </div>
     </div>
-    <div class="flex flex-wrap gap-2">
-      {
-        project.tools.map((tool) => (
-          <div class="bg-hiyo-purple rounded-xl px-2 text-center">
-            <span class="text-light-purple text-xs m:text-sm xl:text-md">{tool}</span>
-          </div>
-        ))
-      }
+    
+    <div class="p-5 flex-grow flex flex-col">
+      <a href={project.link} target="_blank" rel="noopener noreferrer" class="mb-2">
+        <h3 class="text-lg font-bold text-gray-800 hover-effect">
+          {project.title}
+        </h3>
+      </a>
+      
+      <ul class="space-y-2 text-gray-600 text-sm flex-grow list-disc pl-4">
+        {project.description.map((item) => (
+          <li class="list-item-hover">
+            <span class="line-clamp-3">{item}</span>
+          </li>
+        ))}
+      </ul>
+      
+      <div class="mt-4 pt-3 border-t border-gray-100">
+        <div class="flex flex-wrap gap-2 mb-3">
+          {project.tools.map((tool) => (
+            <div class="bg-purple-50 text-purple-700 rounded-full px-3 py-1 text-xs font-medium border border-purple-100">
+              {tool}
+            </div>
+          ))}
+        </div>
+        
+        <a 
+          href={project.link} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center text-purple-600 hover:text-purple-800 text-sm font-medium group"
+        >
+          <span class="border-b border-transparent group-hover:border-purple-500 transition-all duration-300">View Project</span>
+          <svg class="w-3.5 h-3.5 ml-1 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+          </svg>
+        </a>
+      </div>
     </div>
   </div>
-</a>
+</div>
+
+<style>
+  .card-inner {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(229, 231, 235, 0.5);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card-inner:hover {
+    transform: translateY(-8px);
+    border-color: rgba(167, 139, 250, 0.4);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  .hover-effect {
+    position: relative;
+    display: inline;
+    background-image: linear-gradient(to right, #a855f7, #6366f1);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size 0.3s ease;
+    padding-bottom: 2px;
+  }
+  
+  a:hover .hover-effect {
+    background-size: 100% 2px;
+  }
+  
+  .list-item-hover {
+    transition: transform 0.2s ease;
+  }
+  
+  .list-item-hover:hover {
+    transform: translateX(3px);
+  }
+  
+  .date-badge {
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .date-badge::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: all 0.5s;
+  }
+  
+  .card-inner:hover .date-badge::before {
+    left: 100%;
+  }
+</style>
