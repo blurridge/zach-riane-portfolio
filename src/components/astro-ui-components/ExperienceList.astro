@@ -1,67 +1,9 @@
 ---
 import ExperienceCard from "@/components/astro-ui-components/ExperienceCard.astro";
-export interface Experience {
-  title: string;
-  company: string;
-  duration: string;
-  description: string[];
-  link: string;
-  image: string;
-}
-
-const experienceArray: Experience[] = [
-  {
-    title: "Full-stack Web Developer",
-    company: "Project Taytayan",
-    duration: "12/2023 - Present",
-    description: [
-      "Modeled NoSQL databases for efficiency.",
-      "Crafted website components with precision including forms.",
-      "Ensured seamless user experience through testing.",
-    ],
-    link: "",
-    image: "../../assets/taytayan_team.png",
-  },
-  {
-    title: "Data Science Officer",
-    company: "Google Developer Student Clubs - University of San Carlos",
-    duration: "09/2023 - Present",
-    description: [
-      "Spearheaded scholarship distribution to 80+ students, providing access to DataCamp's resources.",
-      "Monitored progress and provided detailed reports.",
-      "Designed tailored assignments for data science concepts reinforcement.",
-    ],
-    link: "",
-    image: "../../assets/zach_ds.png",
-  },
-  {
-    title: "Lead",
-    company: "Google Developer Student Clubs - University of San Carlos",
-    duration: "08/2022 - 07/2023",
-    description: [
-      "Increased member count from 246 to 311 and hosted 8 successful events.",
-      "Accommodated 1000+ participants covering various topics.",
-      "Expanded officer and member portfolios through internships and clubs.",
-    ],
-    link: "",
-    image: "../../assets/zach_lead.jpg",
-  },
-  {
-    title: "Client Success Intern",
-    company: "Dashlabs.ai (YC W21)",
-    duration: "12/2022 - 03/2023",
-    description: [
-      "Spearheaded B2C communications for prompt issue resolution and enhanced satisfaction.",
-      "Managed meetings and reports for B2C analytics, optimizing strategies.",
-      "Contributed to lead generation and client base expansion through effective marketing.",
-    ],
-    link: "",
-    image: "../../assets/dashlabs.png",
-  },
-];
+import { experiences } from "@/data/experiences";
 ---
 
-<section class="w-full relative bg-hiyo-purple h-full">
+<section id="experience" class="w-full relative bg-gradient-to-br from-hiyo-purple via-purple-800 to-purple-900 overflow-hidden">
   <div class="custom-shape-divider-top-1712891365">
     <svg
       data-name="Layer 1"
@@ -82,15 +24,21 @@ const experienceArray: Experience[] = [
         class="shape-fill"></path>
     </svg>
   </div>
-  <div
-    class="w-full flex flex-col md:flex-row flex-wrap justify-center items-center gap-4 my-36"
-  >
-    {
-      experienceArray.map((experience, index) => (
-        <ExperienceCard experience={experience} />
-      ))
-    }
+  
+  <div class="content-container py-16 md:py-20">
+    <div class="container mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        {
+          experiences.map((experience, index) => (
+            <div class="card-animation" style={`animation-delay: ${index * 0.1}s`}>
+              <ExperienceCard experience={experience} />
+            </div>
+          ))
+        }
+      </div>
+    </div>
   </div>
+  
   <div class="custom-shape-divider-bottom-1712891342">
     <svg
       data-name="Layer 1"
@@ -121,6 +69,7 @@ const experienceArray: Experience[] = [
     width: 100%;
     overflow: hidden;
     line-height: 0;
+    z-index: 5;
   }
 
   .custom-shape-divider-top-1712891365 svg {
@@ -133,14 +82,16 @@ const experienceArray: Experience[] = [
   .custom-shape-divider-top-1712891365 .shape-fill {
     fill: #ffffff;
   }
+  
   .custom-shape-divider-bottom-1712891342 {
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     width: 100%;
     overflow: hidden;
     line-height: 0;
     transform: rotate(180deg);
+    z-index: 5;
   }
 
   .custom-shape-divider-bottom-1712891342 svg {
@@ -152,5 +103,32 @@ const experienceArray: Experience[] = [
 
   .custom-shape-divider-bottom-1712891342 .shape-fill {
     fill: #ffffff;
+  }
+  
+  .content-container {
+    position: relative;
+    z-index: 10;
+  }
+  
+  #experience {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  
+  .card-animation {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 </style>
