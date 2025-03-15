@@ -1,6 +1,6 @@
 ---
 import zachImage from "@/assets/zach.png";
-import Greeting from "@/components/react-ui-components/Greeting.tsx";
+import Greeting from "@/components/Greeting.astro";
 import { Image } from "astro:assets";
 ---
 
@@ -8,7 +8,7 @@ import { Image } from "astro:assets";
   class="h-screen flex flex-col justify-between items-center image-gradient z-0"
 >
   <div class="flex flex-col text-center gap-3 mt-36">
-    <Greeting client:load />
+    <Greeting />
     <span
       class="text-lg sm:text-3xl md:text-4xl lg:text-5xl font-semibold w-full"
     >

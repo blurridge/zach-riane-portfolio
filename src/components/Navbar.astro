@@ -1,5 +1,146 @@
 ---
-import { NavbarComponent } from "@/components/react-ui-components/Navbar";
+import { Image } from 'astro:assets';
+import zrmLogo from "@/assets/zrm_logo.svg";
 ---
 
-<NavbarComponent client:only="react" />
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 w-full bg-white transition-shadow duration-300">
+  <div class="desktop-nav flex justify-between">
+    <a href="#">
+      <img class="ml-2" src={zrmLogo.src} width="100" alt="Zach Riane Machacon logo" />
+    </a>
+    <div class="flex items-center justify-center gap-10 font-semibold text-lg mr-10">
+      <a href="#about" class="hover:text-gray-600">About</a>
+      <a href="#experience" class="hover:text-gray-600">Experience</a>
+      <a href="#projects" class="hover:text-gray-600">Projects</a>
+      <a href="#contact" class="hover:text-gray-600">Contact</a>
+    </div>
+  </div>
+
+  <div class="mobile-nav hidden">
+    <div class="flex justify-between">
+      <a href="#">
+        <img class="ml-2" src={zrmLogo.src} width="100" alt="Zach Riane Machacon logo" />
+      </a>
+      <button id="menuToggle" class="p-4">
+        <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="block">
+          <line x1="4" x2="20" y1="12" y2="12"></line>
+          <line x1="4" x2="20" y1="6" y2="6"></line>
+          <line x1="4" x2="20" y1="18" y2="18"></line>
+        </svg>
+        <svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hidden">
+          <path d="M18 6 6 18"></path>
+          <path d="m6 6 12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <div id="mobileMenu" class="mobile-menu-container">
+      <div class="z-[-1] absolute left-0 right-0 top-[-100vh] h-screen gap-10 flex flex-col text-2xl font-semibold justify-center items-center bg-white border-t-2 shadow-md transition-all duration-500">
+        <a href="#" class="hover:text-gray-600">Home</a>
+        <a href="#about" class="hover:text-gray-600">About</a>
+        <a href="#experience" class="hover:text-gray-600">Experience</a>
+        <a href="#projects" class="hover:text-gray-600">Projects</a>
+        <a href="#contact" class="hover:text-gray-600">Contact</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<style>
+  @media (max-width: 768px) {
+    .desktop-nav {
+      display: none;
+    }
+    .mobile-nav {
+      display: block;
+    }
+  }
+
+  .mobile-menu-active {
+    top: 0 !important;
+    opacity: 1 !important;
+  }
+</style>
+
+<script>
+  import { isMobile, isTop, isMobileMenuOpen } from '@/stores/navStore';
+  
+  document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.getElementById('navbar');
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu')?.querySelector('div');
+    const menuIcon = document.getElementById('menuIcon');
+    const closeIcon = document.getElementById('closeIcon');
+    const desktopNav = document.querySelector('.desktop-nav');
+    const mobileNav = document.querySelector('.mobile-nav');
+    
+    // Function to update UI based on mobile state
+    function updateMobileState() {
+      const isMobileView = isMobile.get();
+      if (isMobileView) {
+        desktopNav?.classList.add('hidden');
+        mobileNav?.classList.remove('hidden');
+      } else {
+        desktopNav?.classList.remove('hidden');
+        mobileNav?.classList.add('hidden');
+        
+        // Reset mobile menu if switching from mobile to desktop
+        if (isMobileMenuOpen.get()) {
+          isMobileMenuOpen.set(false);
+        }
+      }
+    }
+    
+    // Function to update scroll state
+    function updateScrollState() {
+      if (isTop.get()) {
+        navbar?.classList.remove('shadow-lg');
+      } else {
+        navbar?.classList.add('shadow-lg');
+      }
+    }
+    
+    // Function to update mobile menu state
+    function updateMenuState() {
+      const menuOpen = isMobileMenuOpen.get();
+      
+      if (menuOpen) {
+        mobileMenu?.classList.add('mobile-menu-active');
+        menuIcon?.classList.add('hidden');
+        menuIcon?.classList.remove('block');
+        closeIcon?.classList.add('block');
+        closeIcon?.classList.remove('hidden');
+      } else {
+        mobileMenu?.classList.remove('mobile-menu-active');
+        menuIcon?.classList.add('block');
+        menuIcon?.classList.remove('hidden');
+        closeIcon?.classList.add('hidden');
+        closeIcon?.classList.remove('block');
+      }
+    }
+    
+    // Subscribe to store changes
+    isTop.subscribe(() => updateScrollState());
+    isMobile.subscribe(() => updateMobileState());
+    isMobileMenuOpen.subscribe(() => updateMenuState());
+    
+    // Handle toggle menu click
+    const toggleMenu = () => {
+      isMobileMenuOpen.set(!isMobileMenuOpen.get());
+    };
+    
+    // Handle menu link clicks
+    const mobileLinks = mobileMenu?.querySelectorAll('a');
+    mobileLinks?.forEach(link => {
+      link.addEventListener('click', () => {
+        isMobileMenuOpen.set(false);
+      });
+    });
+    
+    // Add event listeners
+    menuToggle?.addEventListener('click', toggleMenu);
+    
+    updateMobileState();
+    updateScrollState();
+    updateMenuState();
+  });
+</script> 

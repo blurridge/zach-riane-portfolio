@@ -1,0 +1,90 @@
+---
+// Astro component that uses the existing nanostores for typing effect
+---
+
+<span id="greeting-text" class="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-black px-4 whitespace-nowrap overflow-hidden min-h-[80px]"></span>
+
+<script>
+  import { 
+    greetings, 
+    typingIndex, 
+    typingSubIndex, 
+    typingReverse, 
+    typingBlink,
+    handleTypingBlink,
+    typingEffectConfig
+  } from '@/stores/greetingStore';
+
+  // DOM element
+  const greetingTextEl = document.getElementById('greeting-text');
+
+  // Update the UI when store values change
+  function updateGreetingText() {
+    if (greetingTextEl) {
+      const index = typingIndex.get();
+      const subIndex = typingSubIndex.get();
+      const blink = typingBlink.get();
+      
+      const currentText = greetings[index].substring(0, subIndex);
+      greetingTextEl.textContent = `${currentText}${blink ? '|' : ' '}`;
+    }
+  }
+
+  // Run the typing effect independently
+  function runTypingEffect() {
+    // Check if we've reached the end of the current greeting
+    if (typingSubIndex.get() === greetings[typingIndex.get()].length + 1 && !typingReverse.get()) {
+      // Wait before starting to delete the text
+      setTimeout(() => {
+        typingReverse.set(true);
+        continueTypingEffect();
+      }, 2000);
+      return;
+    }
+
+    // Check if we've completely deleted the current greeting
+    if (typingSubIndex.get() === 0 && typingReverse.get()) {
+      typingReverse.set(false);
+      const newIndex = (typingIndex.get() + 1) % greetings.length;
+      typingIndex.set(newIndex);
+      continueTypingEffect();
+      return;
+    }
+
+    // Update the subindex based on whether we're typing or deleting
+    const newSubIndex = typingSubIndex.get() + (typingReverse.get() ? -1 : 1);
+    typingSubIndex.set(newSubIndex);
+    updateGreetingText();
+
+    // Continue the effect after a delay
+    continueTypingEffect();
+  }
+
+  function continueTypingEffect() {
+    const delay = Math.max(
+      typingReverse.get() ? 75 : typingEffectConfig.typingSpeed,
+      Math.random() * 350
+    );
+    setTimeout(runTypingEffect, delay);
+  }
+
+  // Subscribe to store changes for blinking cursor
+  typingBlink.subscribe(() => updateGreetingText());
+
+  // Initialize the typing effect
+  document.addEventListener('DOMContentLoaded', () => {
+    // Set initial state
+    typingIndex.set(0);
+    typingSubIndex.set(0);
+    typingReverse.set(false);
+    
+    // Initial rendering
+    updateGreetingText();
+    
+    // Start the typing effect
+    runTypingEffect();
+    
+    // Start the cursor blinking
+    setInterval(handleTypingBlink, 500);
+  });
+</script> 
