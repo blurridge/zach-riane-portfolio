@@ -1,5 +1,45 @@
 ---
 import { Image } from 'astro:assets';
+
+import python from '../assets/tech-icons/Python.svg';
+import pytorch from '../assets/tech-icons/pytorch-icon.svg';
+import tensorflow from '../assets/tech-icons/tensorflow-icon.svg';
+import mysql from '../assets/tech-icons/mysql-icon.svg';
+import pandas from '../assets/tech-icons/Pandas.svg';
+import selenium from '../assets/tech-icons/Selenium.svg';
+import beautifulSoup from '../assets/tech-icons/6.1.jpg';
+import scikitLearn from '../assets/tech-icons/scikit-learn.svg';
+import seaborn from '../assets/tech-icons/seaborn.svg';
+import html5 from '../assets/tech-icons/HTML5.svg';
+import css3 from '../assets/tech-icons/CSS3.svg';
+import javascript from '../assets/tech-icons/JavaScript.svg';
+import typescript from '../assets/tech-icons/TypeScript.svg';
+import react from '../assets/tech-icons/React.svg';
+import nextjs from '../assets/tech-icons/nextjs-2.svg';
+import tailwind from '../assets/tech-icons/tailwindcss-icon.svg';
+import nodejs from '../assets/tech-icons/Node.js.svg';
+import express from '../assets/tech-icons/Express.svg';
+import fastapi from '../assets/tech-icons/FastAPI.svg';
+import django from '../assets/tech-icons/django.svg';
+import reactNative from '../assets/tech-icons/header_logo.svg';
+import kotlin from '../assets/tech-icons/kotlinlang-icon.svg';
+import expo from '../assets/tech-icons/expo.svg';
+import postgresql from '../assets/tech-icons/PostgresSQL.svg';
+import supabase from '../assets/tech-icons/supabase-icon.svg';
+import firebase from '../assets/tech-icons/firebase-icon.svg';
+import redis from '../assets/tech-icons/Redis.svg';
+import awsS3 from '../assets/tech-icons/Simple-Storage-Service.svg';
+import awsRds from '../assets/tech-icons/RDS.svg';
+import bigquery from '../assets/tech-icons/google_bigquery-icon.svg';
+import java from '../assets/tech-icons/Java.svg';
+import c from '../assets/tech-icons/C.svg';
+import cplusplus from '../assets/tech-icons/C++ (CPlusPlus).svg';
+import azure from '../assets/tech-icons/microsoft_azure-icon.svg';
+import aws from '../assets/tech-icons/AWS.svg';
+import gcp from '../assets/tech-icons/GCP.svg';
+import vertexAi from '../assets/tech-icons/vertex_ai.png';
+import figma from '../assets/tech-icons/figma-icon.svg';
+import storybook from '../assets/tech-icons/storybook-1.svg';
 ---
 
 <section class="w-full mt-10 mb-10">
@@ -15,58 +55,27 @@ import { Image } from 'astro:assets';
         </h3>
         <div class="flex flex-wrap justify-center gap-8 items-center">
           <a href="https://www.python.org" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
-              alt="python"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={python} alt="Python" width={60} height={60} class="tech-logo" />
           </a>
           <a href="https://pytorch.org/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg"
-              alt="pytorch"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={pytorch} alt="PyTorch" width={60} height={60} class="tech-logo" />
           </a>
           <a href="https://www.tensorflow.org" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg"
-              alt="tensorflow"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={tensorflow} alt="TensorFlow" width={60} height={60} class="tech-logo" />
           </a>
-          <a href="https://www.mysql.com/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://www.vectorlogo.zone/logos/mysql/mysql-icon.svg"
-              alt="sql"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+          <a
+            href="https://cloud.google.com/vertex-ai"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+          >
+            <Image src={vertexAi} alt="Vertex AI" width={60} height={60} class="tech-logo" />
           </a>
           <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg"
-              alt="pandas"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={pandas} alt="Pandas" width={60} height={60} class="tech-logo" />
           </a>
           <a href="https://www.selenium.dev" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://raw.githubusercontent.com/detain/svg-logos/780f25886640cef088af994181646db2f6b1a3f8/svg/selenium-logo.svg"
-              alt="selenium"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={selenium} alt="Selenium" width={60} height={60} class="tech-logo" />
           </a>
           <a
             href="https://beautiful-soup-4.readthedocs.io/"
@@ -75,30 +84,18 @@ import { Image } from 'astro:assets';
             class="tech-item"
           >
             <Image
-              src="https://www.crummy.com/software/BeautifulSoup/bs4/doc/_images/6.1.jpg"
-              alt="beautifulsoup"
-              width="60"
-              height="60"
+              src={beautifulSoup}
+              alt="BeautifulSoup"
+              width={60}
+              height={60}
               class="tech-logo"
             />
           </a>
           <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg"
-              alt="scikit_learn"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={scikitLearn} alt="Scikit-learn" width={60} height={60} class="tech-logo" />
           </a>
           <a href="https://seaborn.pydata.org/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg"
-              alt="seaborn"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={seaborn} alt="Seaborn" width={60} height={60} class="tech-logo" />
           </a>
         </div>
       </div>
@@ -114,13 +111,7 @@ import { Image } from 'astro:assets';
         <h4 class="text-lg font-medium text-gray-700 mb-3 text-center">Frontend</h4>
         <div class="flex flex-wrap justify-center gap-8 items-center mb-8">
           <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg"
-              alt="html5"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={html5} alt="HTML5" width={60} height={60} class="tech-logo" />
           </a>
           <a
             href="https://www.w3schools.com/css/"
@@ -128,13 +119,7 @@ import { Image } from 'astro:assets';
             rel="noreferrer"
             class="tech-item"
           >
-            <Image
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg"
-              alt="css3"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={css3} alt="CSS3" width={60} height={60} class="tech-logo" />
           </a>
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
@@ -142,13 +127,7 @@ import { Image } from 'astro:assets';
             rel="noreferrer"
             class="tech-item"
           >
-            <Image
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
-              alt="javascript"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={javascript} alt="JavaScript" width={60} height={60} class="tech-logo" />
           </a>
           <a
             href="https://www.typescriptlang.org/"
@@ -156,62 +135,26 @@ import { Image } from 'astro:assets';
             rel="noreferrer"
             class="tech-item"
           >
-            <Image
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg"
-              alt="typescript"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={typescript} alt="TypeScript" width={60} height={60} class="tech-logo" />
           </a>
           <a href="https://reactjs.org/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg"
-              alt="react"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={react} alt="React" width={60} height={60} class="tech-logo" />
           </a>
           <a href="https://nextjs.org/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://cdn.worldvectorlogo.com/logos/nextjs-2.svg"
-              alt="next.js"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={nextjs} alt="Next.js" width={60} height={60} class="tech-logo" />
           </a>
           <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg"
-              alt="tailwind"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={tailwind} alt="Tailwind CSS" width={60} height={60} class="tech-logo" />
           </a>
         </div>
 
         <h4 class="text-lg font-medium text-gray-700 mb-3 text-center">Backend</h4>
         <div class="flex flex-wrap justify-center gap-8 items-center">
           <a href="https://nodejs.org" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg"
-              alt="nodejs"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={nodejs} alt="Node.js" width={60} height={60} class="tech-logo" />
           </a>
           <a href="https://expressjs.com" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg"
-              alt="express"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={express} alt="Express" width={60} height={60} class="tech-logo" />
           </a>
           <a
             href="https://fastapi.tiangolo.com/"
@@ -219,13 +162,7 @@ import { Image } from 'astro:assets';
             rel="noreferrer"
             class="tech-item"
           >
-            <Image
-              src="https://icon.icepanel.io/Technology/svg/FastAPI.svg"
-              alt="fastapi"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={fastapi} alt="FastAPI" width={60} height={60} class="tech-logo" />
           </a>
           <a
             href="https://www.djangoproject.com/"
@@ -233,13 +170,7 @@ import { Image } from 'astro:assets';
             rel="noreferrer"
             class="tech-item"
           >
-            <Image
-              src="https://cdn.worldvectorlogo.com/logos/django.svg"
-              alt="django"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={django} alt="Django" width={60} height={60} class="tech-logo" />
           </a>
         </div>
       </div>
@@ -253,31 +184,13 @@ import { Image } from 'astro:assets';
         </h3>
         <div class="flex flex-wrap justify-center gap-8 items-center">
           <a href="https://reactnative.dev/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://d33wubrfki0l68.cloudfront.net/554c3b0e09cf167f0281fda839a5433f2040b349/ecfc9/img/header_logo.svg"
-              alt="react native"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={reactNative} alt="React Native" width={60} height={60} class="tech-logo" />
           </a>
           <a href="https://kotlinlang.org" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://www.vectorlogo.zone/logos/kotlinlang/kotlinlang-icon.svg"
-              alt="kotlin"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={kotlin} alt="Kotlin" width={60} height={60} class="tech-logo" />
           </a>
           <a href="https://expo.dev/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://www.svgrepo.com/show/341805/expo.svg"
-              alt="expo"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={expo} alt="Expo" width={60} height={60} class="tech-logo" />
           </a>
         </div>
       </div>
@@ -290,59 +203,26 @@ import { Image } from 'astro:assets';
           Database and Storage
         </h3>
         <div class="flex flex-wrap justify-center gap-8 items-center">
+          <a href="https://www.mysql.com/" target="_blank" rel="noreferrer" class="tech-item">
+            <Image src={mysql} alt="MySQL" width={60} height={60} class="tech-logo" />
+          </a>
           <a href="https://www.postgresql.org" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg"
-              alt="postgresql"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={postgresql} alt="PostgreSQL" width={60} height={60} class="tech-logo" />
           </a>
           <a href="https://supabase.com/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://www.vectorlogo.zone/logos/supabase/supabase-icon.svg"
-              alt="supabase"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={supabase} alt="Supabase" width={60} height={60} class="tech-logo" />
           </a>
           <a href="https://firebase.google.com/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg"
-              alt="firebase"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={firebase} alt="Firebase" width={60} height={60} class="tech-logo" />
           </a>
           <a href="https://redis.io" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original-wordmark.svg"
-              alt="redis"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={redis} alt="Redis" width={60} height={60} class="tech-logo" />
           </a>
           <a href="https://aws.amazon.com/s3/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://icon.icepanel.io/AWS/svg/Storage/Simple-Storage-Service.svg"
-              alt="aws s3"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={awsS3} alt="AWS S3" width={60} height={60} class="tech-logo" />
           </a>
           <a href="https://aws.amazon.com/rds/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://icon.icepanel.io/AWS/svg/Database/RDS.svg"
-              alt="aws rds"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={awsRds} alt="AWS RDS" width={60} height={60} class="tech-logo" />
           </a>
           <a
             href="https://cloud.google.com/bigquery"
@@ -350,13 +230,7 @@ import { Image } from 'astro:assets';
             rel="noreferrer"
             class="tech-item"
           >
-            <Image
-              src="https://www.vectorlogo.zone/logos/google_bigquery/google_bigquery-icon.svg"
-              alt="bigquery"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={bigquery} alt="BigQuery" width={60} height={60} class="tech-logo" />
           </a>
         </div>
       </div>
@@ -372,13 +246,7 @@ import { Image } from 'astro:assets';
         <h4 class="text-lg font-medium text-gray-700 mb-3 text-center">Languages</h4>
         <div class="flex flex-wrap justify-center gap-8 items-center mb-8">
           <a href="https://www.java.com" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg"
-              alt="java"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={java} alt="Java" width={60} height={60} class="tech-logo" />
           </a>
           <a
             href="https://www.cprogramming.com/"
@@ -386,13 +254,7 @@ import { Image } from 'astro:assets';
             rel="noreferrer"
             class="tech-item"
           >
-            <Image
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg"
-              alt="c"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={c} alt="C" width={60} height={60} class="tech-logo" />
           </a>
           <a
             href="https://www.w3schools.com/cpp/"
@@ -400,13 +262,7 @@ import { Image } from 'astro:assets';
             rel="noreferrer"
             class="tech-item"
           >
-            <Image
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg"
-              alt="cplusplus"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={cplusplus} alt="C++" width={60} height={60} class="tech-logo" />
           </a>
         </div>
 
@@ -418,44 +274,23 @@ import { Image } from 'astro:assets';
             rel="noreferrer"
             class="tech-item"
           >
-            <Image
-              src="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg"
-              alt="azure"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={azure} alt="Azure" width={60} height={60} class="tech-logo" />
           </a>
           <a href="https://aws.amazon.com" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
-              alt="aws"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={aws} alt="AWS" width={60} height={60} class="tech-logo" />
+          </a>
+          <a href="https://cloud.google.com" target="_blank" rel="noreferrer" class="tech-item">
+            <Image src={gcp} alt="Google Cloud Platform" width={60} height={60} class="tech-logo" />
           </a>
         </div>
 
         <h4 class="text-lg font-medium text-gray-700 mb-3 text-center">UI/UX</h4>
         <div class="flex flex-wrap justify-center gap-8 items-center">
           <a href="https://www.figma.com/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg"
-              alt="figma"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={figma} alt="Figma" width={60} height={60} class="tech-logo" />
           </a>
           <a href="https://storybook.js.org/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image
-              src="https://cdn.worldvectorlogo.com/logos/storybook-1.svg"
-              alt="storybook"
-              width="60"
-              height="60"
-              class="tech-logo"
-            />
+            <Image src={storybook} alt="Storybook" width={60} height={60} class="tech-logo" />
           </a>
         </div>
       </div>
