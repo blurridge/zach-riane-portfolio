@@ -39,7 +39,7 @@ export const experiences: Experience[] = [
   },
   {
     title: 'Lead Developer',
-    company: 'Gard Technologies Inc.',
+    company: 'Gard Technologies',
     duration: '06/2024 - 09/2024',
     description: [
       'Designed and implemented intuitive, responsive mobile interfaces using React Native for 3,000+ active users.',
@@ -62,6 +62,6 @@ export const experiences: Experience[] = [
     ],
     link: '',
     companyLogo: 'dashlabs.svg',
-    location: 'Manila, Philippines',
+    location: 'Manila, Philippines (Remote)',
   },
 ];
