@@ -7,6 +7,7 @@ export interface Experience {
   description: string[];
   link: string;
   companyLogo: string;
+  location: string;
 }
 
 export const experiences: Experience[] = [
@@ -20,6 +21,7 @@ export const experiences: Experience[] = [
     ],
     link: '',
     companyLogo: 'symph_logo.svg',
+    location: 'Cebu City, Philippines (Remote)',
   },
   {
     title: 'Software Engineer',
@@ -33,6 +35,7 @@ export const experiences: Experience[] = [
     ],
     link: '',
     companyLogo: 'norg_ai_logo.svg',
+    location: 'Melbourne, Australia (Remote)',
   },
   {
     title: 'Lead Developer',
@@ -46,6 +49,7 @@ export const experiences: Experience[] = [
     ],
     link: '',
     companyLogo: 'gard_logo.svg',
+    location: 'Lexington, Kentucky, USA (Remote)',
   },
   {
     title: 'Client Success Intern',
@@ -58,5 +62,6 @@ export const experiences: Experience[] = [
     ],
     link: '',
     companyLogo: 'dashlabs.svg',
+    location: 'Manila, Philippines',
   },
 ];

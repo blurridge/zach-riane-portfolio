@@ -40,6 +40,20 @@ if (!images[logoPath]) {
       <div class="flex-grow mr-3">
         <h3 class="text-lg font-bold text-gray-800 hover-effect">{experience.title}</h3>
         <p class="text-sm text-gray-500">{experience.company}</p>
+        <p class="text-xs text-gray-400 flex items-center mt-0.5">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-3 w-3 mr-1"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+              clip-rule="evenodd"></path>
+          </svg>
+          {experience.location}
+        </p>
       </div>
 
       <div
@@ -122,22 +136,17 @@ if (!images[logoPath]) {
 
   .hover-effect {
     position: relative;
-    display: inline-block;
-  }
-
-  .hover-effect::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
+    display: inline;
     background-image: linear-gradient(to right, #a855f7, #6366f1);
-    transition: width 0.3s ease;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 2px;
+    transition: background-size 0.3s ease;
+    padding-bottom: 2px;
   }
 
-  .card-inner:hover .hover-effect::after {
-    width: 100%;
+  .experience-card:hover .hover-effect {
+    background-size: 100% 2px;
   }
 
   .list-item-hover {

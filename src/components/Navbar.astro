@@ -5,7 +5,7 @@ import zrmLogo from '@/assets/zrm_logo.svg';
 
 <nav
   id="navbar"
-  class="fixed top-0 left-0 right-0 z-50 w-full bg-white transition-shadow duration-300"
+  class="fixed top-0 left-0 right-0 z-50 w-full bg-white/90 backdrop-blur-sm transition-all duration-300"
 >
   <div class="desktop-nav flex justify-between">
     <a href="#">
@@ -20,11 +20,14 @@ import zrmLogo from '@/assets/zrm_logo.svg';
   </div>
 
   <div class="mobile-nav hidden">
-    <div class="flex justify-between">
+    <div class="flex justify-between items-center py-3 px-4">
       <a href="#">
-        <img class="ml-2" src={zrmLogo.src} width="100" alt="Zach Riane Machacon logo" />
+        <img src={zrmLogo.src} width="90" alt="Zach Riane Machacon logo" />
       </a>
-      <button id="menuToggle" class="p-4">
+      <button
+        id="menuToggle"
+        class="p-2 rounded-full hover:bg-gray-100 transition-colors duration-200"
+      >
         <svg
           id="menuIcon"
           xmlns="http://www.w3.org/2000/svg"
@@ -62,13 +65,16 @@ import zrmLogo from '@/assets/zrm_logo.svg';
     </div>
     <div id="mobileMenu" class="mobile-menu-container">
       <div
-        class="z-[-1] absolute left-0 right-0 top-[-100vh] h-screen gap-10 flex flex-col text-2xl font-semibold justify-center items-center bg-white border-t-2 shadow-md transition-all duration-500"
+        class="z-[-1] absolute left-0 right-0 top-[-100vh] h-screen flex flex-col justify-center items-center bg-white/95 backdrop-blur-md transition-all duration-500 ease-in-out opacity-0"
       >
-        <a href="#" class="hover:text-gray-600">Home</a>
-        <a href="#about" class="hover:text-gray-600">About</a>
-        <a href="#experience" class="hover:text-gray-600">Experience</a>
-        <a href="#projects" class="hover:text-gray-600">Projects</a>
-        <a href="#contact" class="hover:text-gray-600">Contact</a>
+        <div class="flex flex-col gap-8 text-xl font-medium">
+          <a href="#" class="mobile-link relative overflow-hidden py-2 px-4">Home</a>
+          <a href="#about" class="mobile-link relative overflow-hidden py-2 px-4">About</a>
+          <a href="#experience" class="mobile-link relative overflow-hidden py-2 px-4">Experience</a
+          >
+          <a href="#projects" class="mobile-link relative overflow-hidden py-2 px-4">Projects</a>
+          <a href="#contact" class="mobile-link relative overflow-hidden py-2 px-4">Contact</a>
+        </div>
       </div>
     </div>
   </div>
@@ -87,6 +93,30 @@ import zrmLogo from '@/assets/zrm_logo.svg';
   .mobile-menu-active {
     top: 0 !important;
     opacity: 1 !important;
+  }
+
+  .mobile-link {
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .mobile-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, #a855f7, #6366f1);
+    transition: width 0.3s ease;
+  }
+
+  .mobile-link:hover {
+    transform: translateX(5px);
+  }
+
+  .mobile-link:hover::after {
+    width: 100%;
   }
 </style>
 
@@ -133,12 +163,14 @@ import zrmLogo from '@/assets/zrm_logo.svg';
       const menuOpen = isMobileMenuOpen.get();
 
       if (menuOpen) {
+        document.body.style.overflow = 'hidden';
         mobileMenu?.classList.add('mobile-menu-active');
         menuIcon?.classList.add('hidden');
         menuIcon?.classList.remove('block');
         closeIcon?.classList.add('block');
         closeIcon?.classList.remove('hidden');
       } else {
+        document.body.style.overflow = '';
         mobileMenu?.classList.remove('mobile-menu-active');
         menuIcon?.classList.add('block');
         menuIcon?.classList.remove('hidden');

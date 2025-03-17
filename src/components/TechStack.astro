@@ -301,10 +301,16 @@ import storybook from '../assets/tech-icons/storybook-1.svg';
 <style>
   .tech-item {
     @apply flex items-center justify-center;
-    @apply hover:scale-110 transition-all;
-    @apply p-2 rounded-lg hover:bg-purple-50;
+    @apply transition-all duration-300 ease-in-out;
+    @apply p-2 rounded-lg;
     width: 80px;
     height: 80px;
+    position: relative;
+  }
+
+  .tech-item:hover {
+    transform: translateY(-5px) scale(1.12);
+    filter: drop-shadow(0 6px 8px rgba(167, 139, 250, 0.3));
   }
 
   .tech-logo {
