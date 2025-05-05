@@ -1,5 +1,3 @@
-import type { ImageMetadata } from 'astro';
-
 export interface Experience {
   title: string;
   company: string;
@@ -16,10 +14,11 @@ export const experiences: Experience[] = [
     company: 'Symph',
     duration: '12/2024 - Present',
     description: [
-      'Built responsive React components and UI for M Lhuillier, improving transaction workflows and customer experience.',
-      'Developed RESTful APIs and services with Express.js, enabling seamless frontend-backend integration.',
+      'Architected React component systems for M Lhuillier and Symph products, implementing intuitive interfaces for approval workflows, status tracking, and multi-tier filtering capabilities.',
+      'Developed Express.js REST APIs supporting financial transaction processing, automated notifications, and integration with SMS/email services for real-time status updates.',
+      'Led proof-of-concept projects integrating Google Vertex AI and Gemini models into web applications, creating intelligent search features and automated content generation capabilities.',
     ],
-    link: '',
+    link: 'https://www.symph.co/',
     companyLogo: 'symph_logo.svg',
     location: 'Cebu City, Philippines (Remote)',
   },
@@ -33,7 +32,7 @@ export const experiences: Experience[] = [
       'Optimized prompts with OpenAI GPT, Meta Llama, and Anthropic Claude models, improving LLM accuracy and relevance.',
       'Built full-stack features for assistant creation with templates, enabling customized classification workflows with LLMs.',
     ],
-    link: '',
+    link: 'https://www.norg.ai/',
     companyLogo: 'norg_ai_logo.svg',
     location: 'Melbourne, Australia (Remote)',
   },
@@ -47,7 +46,7 @@ export const experiences: Experience[] = [
       'Created an in-house invoice generation system which reduced errors in receivables by 10%.',
       'Integrated OpenAI API functionalities for RAG features for location assistants and report summaries.',
     ],
-    link: '',
+    link: 'https://www.gardtechnologies.com/',
     companyLogo: 'gard_logo.svg',
     location: 'Lexington, Kentucky, USA (Remote)',
   },
@@ -60,7 +59,7 @@ export const experiences: Experience[] = [
       'Managed meetings and reports for B2C analytics, optimizing strategies.',
       'Contributed to lead generation and client base expansion through effective marketing.',
     ],
-    link: '',
+    link: 'https://www.dashlabs.ai/',
     companyLogo: 'dashlabs.svg',
     location: 'Manila, Philippines (Remote)',
   },
