@@ -1,0 +1,35 @@
+---
+import CertificationCard from '@/components/astro-ui-components/CertificationCard.astro';
+import { certifications } from '@/data/certifications';
+---
+
+<div class="container mx-auto px-4">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+    {
+      certifications.map((certification, index) => (
+        <div class="card-animation" style={`animation-delay: ${index * 0.1}s`}>
+          <CertificationCard certification={certification} />
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .card-animation {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
