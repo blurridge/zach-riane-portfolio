@@ -11,6 +11,20 @@ export interface Certification {
 
 export const certifications: Certification[] = [
   {
+    title: 'Professional Data Engineer',
+    issuer: 'Google Cloud',
+    validFrom: '12/2025',
+    validUntil: '12/2027',
+    certificationId: 'e7a93402230b44fdb304bf8f106958d6',
+    url: 'https://www.credly.com/badges/48a60f95-8ba3-466c-9a6a-efc58c8f6171/public_url',
+    issuerLogo: 'tech-icons/GCP.svg',
+    description: [
+      'Design and build data processing systems',
+      'Prepare and process data for machine learning',
+      'Ensure solution quality, security, and scalability',
+    ],
+  },
+  {
     title: 'Professional Cloud Architect',
     issuer: 'Google Cloud',
     validFrom: '09/2025',
