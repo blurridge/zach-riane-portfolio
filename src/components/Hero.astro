@@ -4,7 +4,11 @@ import Greeting from '@/components/Greeting.astro';
 import { Image } from 'astro:assets';
 ---
 
-<section class="h-screen flex flex-col justify-between items-center image-gradient z-0">
+<section
+  id="hero"
+  aria-label="Hero"
+  class="h-screen flex flex-col justify-between items-center image-gradient z-0"
+>
   <div class="flex flex-col text-center gap-3 mt-36">
     <Greeting />
     <span class="text-lg sm:text-3xl md:text-4xl lg:text-5xl font-semibold w-full">
@@ -12,7 +16,7 @@ import { Image } from 'astro:assets';
       /> and the web for continuous growth.</span
     >
   </div>
-  <Image src={zachImage} alt="Zach Riane Machacon" width={700} id="about" loading="eager" />
+  <Image src={zachImage} alt="Zach Riane Machacon" width={700} loading="eager" />
 </section>
 
 <style>
