@@ -1,22 +1,151 @@
 ---
 interface Props {
   title: string;
+  description?: string;
+  ogImage?: string;
 }
 
-const { title } = Astro.props;
+const {
+  title,
+  description = 'Zach Riane Machacon is a Software and Machine Learning Engineer based in Cebu City, Philippines. Google Cloud Certified Professional with expertise in React, Python, PyTorch, TensorFlow, NestJS, FastAPI, and cloud platforms.',
+  ogImage = '/og-image.png',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL(ogImage, Astro.site);
+
+const personSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Zach Riane Machacon',
+  url: Astro.site?.toString(),
+  image: ogImageURL.toString(),
+  jobTitle: 'Software Engineer / Machine Learning Engineer',
+  worksFor: {
+    '@type': 'Organization',
+    name: 'Symph',
+    url: 'https://www.symph.co/',
+  },
+  alumniOf: {
+    '@type': 'EducationalOrganization',
+    name: 'University of San Carlos',
+  },
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Cebu City',
+    addressRegion: 'Cebu',
+    addressCountry: 'PH',
+  },
+  email: 'zachriane01@gmail.com',
+  sameAs: [
+    'https://github.com/blurridge',
+    'https://www.linkedin.com/in/zachriane',
+    'https://x.com/zachahalol',
+    'https://www.instagram.com/zachahalol',
+  ],
+  knowsAbout: [
+    'Machine Learning',
+    'Software Engineering',
+    'Python',
+    'PyTorch',
+    'TensorFlow',
+    'React',
+    'Next.js',
+    'NestJS',
+    'FastAPI',
+    'Google Cloud Platform',
+    'AWS',
+    'Azure',
+  ],
+  hasCredential: [
+    {
+      '@type': 'EducationalOccupationalCredential',
+      name: 'Professional Data Engineer',
+      credentialCategory: 'Professional Certification',
+      recognizedBy: { '@type': 'Organization', name: 'Google Cloud' },
+      url: 'https://www.credly.com/badges/48a60f95-8ba3-466c-9a6a-efc58c8f6171/public_url',
+    },
+    {
+      '@type': 'EducationalOccupationalCredential',
+      name: 'Professional Cloud Architect',
+      credentialCategory: 'Professional Certification',
+      recognizedBy: { '@type': 'Organization', name: 'Google Cloud' },
+      url: 'https://www.credly.com/badges/5fc1193c-5fb1-4574-a36a-4bbd7b5be6ad/public_url',
+    },
+    {
+      '@type': 'EducationalOccupationalCredential',
+      name: 'Professional Machine Learning Engineer',
+      credentialCategory: 'Professional Certification',
+      recognizedBy: { '@type': 'Organization', name: 'Google Cloud' },
+      url: 'https://www.credly.com/badges/aee10280-c1e6-4225-ac5e-e99e02fc6d61/public_url',
+    },
+  ],
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Zach Riane Machacon — Portfolio',
+  url: Astro.site?.toString(),
+  description: description,
+  author: { '@type': 'Person', name: 'Zach Riane Machacon' },
+  inLanguage: 'en',
+};
 ---
 
 <!doctype html>
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
     <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="author" content="Zach Riane Machacon" />
+    <meta
+      name="keywords"
+      content="Zach Riane Machacon, Software Engineer, Machine Learning Engineer, Python, PyTorch, TensorFlow, React, Next.js, NestJS, FastAPI, Google Cloud, GCP, AWS, Azure, Cebu, Philippines, portfolio, full-stack developer"
+    />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="Zach Riane Machacon — Software and Machine Learning Engineer"
+    />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Zach Riane Machacon" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+    <meta
+      name="twitter:image:alt"
+      content="Zach Riane Machacon — Software and Machine Learning Engineer"
+    />
+    <meta name="twitter:creator" content="@zachahalol" />
+    <meta name="twitter:site" content="@zachahalol" />
+
+    <!-- JSON-LD Structured Data -->
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(personSchema)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
   </head>
-  <body>
+  <body class="m-0 p-0 overflow-x-hidden max-w-full">
     <slot />
   </body>
 </html>
