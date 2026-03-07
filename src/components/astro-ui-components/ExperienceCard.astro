@@ -16,16 +16,21 @@ const logoPath = `/src/assets/${experience.companyLogo}`;
 if (!images[logoPath]) {
   throw new Error(`"${logoPath}" does not exist in glob: "/src/assets/*.{jpeg,jpg,png,gif,svg}"`);
 }
+
+const isCurrent = experience.duration.includes('Present');
 ---
 
 <div class="experience-card h-full">
-  <div
-    class="card-inner bg-white rounded-xl shadow-lg overflow-hidden h-full flex flex-col transform transition-all duration-500 hover:shadow-2xl"
-  >
-    <div class="flex items-center p-5 border-b border-gray-100">
-      <div class="mr-4">
+  <div class="card-inner bg-white rounded-xl shadow-lg overflow-hidden h-full flex flex-col">
+    <!-- Gradient accent bar -->
+    <div class="h-1 w-full bg-gradient-to-r from-hiyo-purple to-purple-400"></div>
+
+    <!-- Header -->
+    <div class="flex items-start justify-between p-5 border-b border-gray-100">
+      <div class="flex items-start gap-4">
+        <!-- Logo -->
         <div
-          class="logo-container rounded-full bg-white shadow-md relative overflow-hidden w-14 h-14 flex items-center justify-center"
+          class="logo-container rounded-lg bg-white shadow-sm border border-purple-100 w-14 h-14 flex items-center justify-center flex-shrink-0"
         >
           <Image
             src={images[logoPath]()}
@@ -35,16 +40,19 @@ if (!images[logoPath]) {
             class="logo-image"
           />
         </div>
-      </div>
 
-      <div class="flex-grow mr-3">
-        <a href={experience.link} target="_blank" rel="noopener noreferrer" class="mb-2">
-          <h3 class="text-lg font-bold text-gray-800 hover-effect">{experience.title}</h3>
-          <p class="text-sm text-gray-500">{experience.company}</p>
-          <p class="text-xs text-gray-400 flex items-center mt-0.5">
+        <!-- Title + company + meta -->
+        <div>
+          <a href={experience.link} target="_blank" rel="noopener noreferrer">
+            <h3 class="text-xl font-bold text-gray-800 hover-effect leading-tight">
+              {experience.title}
+            </h3>
+          </a>
+          <p class="text-sm font-semibold text-hiyo-purple mt-0.5">{experience.company}</p>
+          <p class="text-xs text-gray-400 flex items-center mt-1 gap-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="h-3 w-3 mr-1"
+              class="h-3 w-3 flex-shrink-0"
               viewBox="0 0 20 20"
               fill="currentColor"
             >
@@ -55,35 +63,44 @@ if (!images[logoPath]) {
             </svg>
             {experience.location}
           </p>
-        </a>
+          <p class="text-xs text-gray-400 flex items-center mt-1 gap-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-3 w-3 flex-shrink-0"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                clip-rule="evenodd"></path>
+            </svg>
+            {experience.duration}
+          </p>
+        </div>
       </div>
 
-      <div
-        class="date-badge flex-shrink-0 text-xs font-medium text-purple-700 bg-purple-50 py-1 px-3 rounded-full border border-purple-100"
-      >
-        {experience.duration}
-      </div>
+      <!-- Current indicator -->
+      {
+        isCurrent && (
+          <div class="flex items-center gap-1.5 flex-shrink-0 mt-1">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500" />
+            </span>
+            <span class="text-xs font-semibold text-green-600">Current</span>
+          </div>
+        )
+      }
     </div>
 
+    <!-- Description -->
     <div class="p-5 flex-grow flex flex-col">
       <ul class="space-y-3 text-gray-600 text-sm flex-grow">
         {
           experience.description.map(item => (
-            <li class="flex items-start list-item-hover">
-              <span class="text-purple-500 mr-2 pt-0.5">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-4 w-4"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </span>
+            <li class="flex items-start list-item-hover gap-2">
+              <span class="text-hiyo-purple font-bold mt-0.5 flex-shrink-0 select-none">–</span>
               <span>{item}</span>
             </li>
           ))
@@ -97,11 +114,12 @@ if (!images[logoPath]) {
   .card-inner {
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border: 1px solid rgba(229, 231, 235, 0.5);
+    border-left: 3px solid transparent;
   }
 
   .card-inner:hover {
     transform: translateY(-8px);
-    border-color: rgba(167, 139, 250, 0.4);
+    border-left-color: #4f1091;
     box-shadow:
       0 20px 25px -5px rgba(0, 0, 0, 0.1),
       0 10px 10px -5px rgba(0, 0, 0, 0.04);
@@ -110,7 +128,7 @@ if (!images[logoPath]) {
   .hover-effect {
     position: relative;
     display: inline;
-    background-image: linear-gradient(to right, #a855f7, #6366f1);
+    background-image: linear-gradient(to right, #4f1091, #a855f7);
     background-position: 0 100%;
     background-repeat: no-repeat;
     background-size: 0% 2px;
@@ -130,32 +148,8 @@ if (!images[logoPath]) {
     transform: translateX(3px);
   }
 
-  .date-badge {
-    white-space: nowrap;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .date-badge::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: all 0.5s;
-  }
-
-  .card-inner:hover .date-badge::before {
-    left: 100%;
-  }
-
   .logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
+    padding: 6px;
   }
 
   .logo-image {

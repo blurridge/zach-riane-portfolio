@@ -5,20 +5,21 @@ import zrmLogo from '@/assets/zrm_logo.svg';
 
 <nav
   id="navbar"
-  class="fixed top-0 left-0 right-0 z-50 w-full bg-white/90 backdrop-blur-sm transition-all duration-300"
+  class="fixed top-0 left-0 right-0 z-50 w-full bg-white/90 backdrop-blur-md border-b border-purple-100/50 transition-all duration-300"
 >
   <div class="desktop-nav flex justify-between">
-    <a href="#">
+    <a href="#" class="logo-link">
       <img class="ml-2" src={zrmLogo.src} width="100" alt="Zach Riane Machacon logo" />
     </a>
     <div class="flex items-center justify-center gap-10 font-semibold text-lg mr-10">
-      <a href="#about" class="hover:text-gray-600">About</a>
-      <a href="#experience" class="hover:text-gray-600">Experience</a>
-      <a href="#certifications" class="hover:text-gray-600">Certifications</a>
-      <a href="#projects" class="hover:text-gray-600">Projects</a>
-      <a href="#contact" class="hover:text-gray-600">Contact</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#certifications" class="nav-link">Certifications</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#contact" class="nav-link">Contact</a>
     </div>
   </div>
+  <div id="progress-bar"></div>
 
   <div class="mobile-nav hidden">
     <div class="flex justify-between items-center py-3 px-4">
@@ -69,15 +70,36 @@ import zrmLogo from '@/assets/zrm_logo.svg';
         class="z-[-1] absolute left-0 right-0 top-[-100vh] h-screen flex flex-col justify-center items-center bg-white/95 backdrop-blur-md transition-all duration-500 ease-in-out opacity-0"
       >
         <div class="flex flex-col gap-8 text-xl font-medium">
-          <a href="#" class="mobile-link relative overflow-hidden py-2 px-4">Home</a>
-          <a href="#about" class="mobile-link relative overflow-hidden py-2 px-4">About</a>
-          <a href="#experience" class="mobile-link relative overflow-hidden py-2 px-4">Experience</a
+          <a
+            href="#"
+            class="mobile-link relative overflow-hidden py-2 px-4"
+            style="animation-delay: 0ms">Home</a
           >
-          <a href="#certifications" class="mobile-link relative overflow-hidden py-2 px-4"
-            >Certifications</a
+          <a
+            href="#about"
+            class="mobile-link relative overflow-hidden py-2 px-4"
+            style="animation-delay: 75ms">About</a
           >
-          <a href="#projects" class="mobile-link relative overflow-hidden py-2 px-4">Projects</a>
-          <a href="#contact" class="mobile-link relative overflow-hidden py-2 px-4">Contact</a>
+          <a
+            href="#experience"
+            class="mobile-link relative overflow-hidden py-2 px-4"
+            style="animation-delay: 150ms">Experience</a
+          >
+          <a
+            href="#certifications"
+            class="mobile-link relative overflow-hidden py-2 px-4"
+            style="animation-delay: 225ms">Certifications</a
+          >
+          <a
+            href="#projects"
+            class="mobile-link relative overflow-hidden py-2 px-4"
+            style="animation-delay: 300ms">Projects</a
+          >
+          <a
+            href="#contact"
+            class="mobile-link relative overflow-hidden py-2 px-4"
+            style="animation-delay: 375ms">Contact</a
+          >
         </div>
       </div>
     </div>
@@ -99,9 +121,72 @@ import zrmLogo from '@/assets/zrm_logo.svg';
     opacity: 1 !important;
   }
 
+  /* Progress bar */
+  #progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: linear-gradient(to right, #9333ea, #6366f1);
+    transition: width 0.1s linear;
+  }
+
+  /* Desktop nav links */
+  .nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right, #9333ea, #6366f1);
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  .nav-link.active {
+    color: #4f1091;
+  }
+
+  /* Logo hover glow */
+  .logo-link img {
+    transition: filter 0.3s ease;
+  }
+
+  .logo-link:hover img {
+    filter: drop-shadow(0 0 8px rgba(199, 190, 245, 0.9));
+  }
+
+  /* Mobile link stagger reveal */
+  @keyframes linkReveal {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   .mobile-link {
     position: relative;
-    transition: all 0.3s ease;
+    opacity: 0;
+    transition: transform 0.3s ease;
+  }
+
+  .mobile-menu-active .mobile-link {
+    animation: linkReveal 0.4s ease forwards;
   }
 
   .mobile-link::after {
@@ -207,5 +292,33 @@ import zrmLogo from '@/assets/zrm_logo.svg';
     updateMobileState();
     updateScrollState();
     updateMenuState();
+
+    // Scroll progress bar
+    const progressBar = document.getElementById('progress-bar');
+    function updateProgress() {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (window.scrollY / docHeight) * 100 : 0;
+      if (progressBar) progressBar.style.width = `${progress}%`;
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    updateProgress();
+
+    // Scroll-spy: highlight active nav section
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+    const sectionObserver = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            document
+              .querySelector(`.nav-link[href="#${entry.target.id}"]`)
+              ?.classList.add('active');
+          }
+        });
+      },
+      { threshold: 0.4 }
+    );
+    sections.forEach(s => sectionObserver.observe(s));
   });
 </script>

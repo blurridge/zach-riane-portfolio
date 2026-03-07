@@ -46,255 +46,568 @@ import storybook from '../assets/tech-icons/storybook-1.svg';
 <section id="tech-stack" aria-label="Tech Stack" class="w-full mt-10 mb-10">
   <div class="flex flex-col items-center gap-5">
     <span class="bg-hiyo-purple text-white px-3 text-3xl sm:text-5xl font-bold">tools.</span>
-    <div class="max-w-6xl mx-auto px-4 py-8">
+    <div class="max-w-6xl mx-auto px-4 py-8 w-full">
       <!-- Data Analysis and Machine Learning -->
-      <div class="mb-10">
-        <h3
-          class="text-xl font-semibold mb-5 text-center bg-purple-50 text-purple-800 py-2 rounded-lg"
-        >
-          Data Analysis and Machine Learning
-        </h3>
-        <div class="flex flex-wrap justify-center gap-8 items-center">
-          <a href="https://www.python.org" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={python} alt="Python" width={60} height={60} class="tech-logo" />
+      <div class="mb-12">
+        <div class="category-header">
+          <div class="category-bar"></div>
+          <h3>Data Analysis and Machine Learning</h3>
+        </div>
+        <div class="tools-grid">
+          <a
+            href="https://www.python.org"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 0ms"
+          >
+            <div class="tech-card">
+              <Image src={python} alt="Python" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">Python</span>
+            </div>
           </a>
-          <a href="https://pytorch.org/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={pytorch} alt="PyTorch" width={60} height={60} class="tech-logo" />
+          <a
+            href="https://pytorch.org/"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 50ms"
+          >
+            <div class="tech-card">
+              <Image src={pytorch} alt="PyTorch" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">PyTorch</span>
+            </div>
           </a>
-          <a href="https://www.tensorflow.org" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={tensorflow} alt="TensorFlow" width={60} height={60} class="tech-logo" />
+          <a
+            href="https://www.tensorflow.org"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 100ms"
+          >
+            <div class="tech-card">
+              <Image src={tensorflow} alt="TensorFlow" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">TensorFlow</span>
+            </div>
           </a>
           <a
             href="https://cloud.google.com/vertex-ai"
             target="_blank"
             rel="noreferrer"
             class="tech-item"
+            style="animation-delay: 150ms"
           >
-            <Image src={vertexAi} alt="Vertex AI" width={60} height={60} class="tech-logo" />
+            <div class="tech-card">
+              <Image src={vertexAi} alt="Vertex AI" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">Vertex AI</span>
+            </div>
           </a>
-          <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={pandas} alt="Pandas" width={60} height={60} class="tech-logo" />
+          <a
+            href="https://pandas.pydata.org/"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 200ms"
+          >
+            <div class="tech-card">
+              <Image src={pandas} alt="Pandas" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">Pandas</span>
+            </div>
           </a>
-          <a href="https://www.selenium.dev" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={selenium} alt="Selenium" width={60} height={60} class="tech-logo" />
+          <a
+            href="https://www.selenium.dev"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 250ms"
+          >
+            <div class="tech-card">
+              <Image src={selenium} alt="Selenium" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">Selenium</span>
+            </div>
           </a>
           <a
             href="https://beautiful-soup-4.readthedocs.io/"
             target="_blank"
             rel="noreferrer"
             class="tech-item"
+            style="animation-delay: 300ms"
           >
-            <Image
-              src={beautifulSoup}
-              alt="BeautifulSoup"
-              width={60}
-              height={60}
-              class="tech-logo"
-            />
+            <div class="tech-card">
+              <Image
+                src={beautifulSoup}
+                alt="BeautifulSoup"
+                width={48}
+                height={48}
+                class="tech-logo"
+              />
+              <span class="tech-name">BeautifulSoup</span>
+            </div>
           </a>
-          <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={scikitLearn} alt="Scikit-learn" width={60} height={60} class="tech-logo" />
+          <a
+            href="https://scikit-learn.org/"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 350ms"
+          >
+            <div class="tech-card">
+              <Image
+                src={scikitLearn}
+                alt="Scikit-learn"
+                width={48}
+                height={48}
+                class="tech-logo"
+              />
+              <span class="tech-name">Scikit-learn</span>
+            </div>
           </a>
-          <a href="https://seaborn.pydata.org/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={seaborn} alt="Seaborn" width={60} height={60} class="tech-logo" />
+          <a
+            href="https://seaborn.pydata.org/"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 400ms"
+          >
+            <div class="tech-card">
+              <Image src={seaborn} alt="Seaborn" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">Seaborn</span>
+            </div>
           </a>
         </div>
       </div>
 
       <!-- Web Development -->
-      <div class="mb-10">
-        <h3
-          class="text-xl font-semibold mb-5 text-center bg-purple-50 text-purple-800 py-2 rounded-lg"
-        >
-          Web Development
-        </h3>
-
-        <h4 class="text-lg font-medium text-gray-700 mb-3 text-center">Frontend</h4>
-        <div class="flex flex-wrap justify-center gap-8 items-center mb-8">
-          <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={html5} alt="HTML5" width={60} height={60} class="tech-logo" />
+      <div class="mb-12">
+        <div class="category-header">
+          <div class="category-bar"></div>
+          <h3>Web Development</h3>
+        </div>
+        <div class="subcategory-divider"><span>Frontend</span></div>
+        <div class="tools-grid mb-6">
+          <a
+            href="https://www.w3.org/html/"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 0ms"
+          >
+            <div class="tech-card">
+              <Image src={html5} alt="HTML5" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">HTML5</span>
+            </div>
           </a>
           <a
             href="https://www.w3schools.com/css/"
             target="_blank"
             rel="noreferrer"
             class="tech-item"
+            style="animation-delay: 50ms"
           >
-            <Image src={css3} alt="CSS3" width={60} height={60} class="tech-logo" />
+            <div class="tech-card">
+              <Image src={css3} alt="CSS3" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">CSS3</span>
+            </div>
           </a>
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
             target="_blank"
             rel="noreferrer"
             class="tech-item"
+            style="animation-delay: 100ms"
           >
-            <Image src={javascript} alt="JavaScript" width={60} height={60} class="tech-logo" />
+            <div class="tech-card">
+              <Image src={javascript} alt="JavaScript" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">JavaScript</span>
+            </div>
           </a>
           <a
             href="https://www.typescriptlang.org/"
             target="_blank"
             rel="noreferrer"
             class="tech-item"
+            style="animation-delay: 150ms"
           >
-            <Image src={typescript} alt="TypeScript" width={60} height={60} class="tech-logo" />
+            <div class="tech-card">
+              <Image src={typescript} alt="TypeScript" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">TypeScript</span>
+            </div>
           </a>
-          <a href="https://reactjs.org/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={react} alt="React" width={60} height={60} class="tech-logo" />
+          <a
+            href="https://reactjs.org/"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 200ms"
+          >
+            <div class="tech-card">
+              <Image src={react} alt="React" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">React</span>
+            </div>
           </a>
-          <a href="https://nextjs.org/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={nextjs} alt="Next.js" width={60} height={60} class="tech-logo" />
+          <a
+            href="https://nextjs.org/"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 250ms"
+          >
+            <div class="tech-card">
+              <Image src={nextjs} alt="Next.js" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">Next.js</span>
+            </div>
           </a>
-          <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={tailwind} alt="Tailwind CSS" width={60} height={60} class="tech-logo" />
+          <a
+            href="https://tailwindcss.com/"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 300ms"
+          >
+            <div class="tech-card">
+              <Image src={tailwind} alt="Tailwind CSS" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">Tailwind CSS</span>
+            </div>
           </a>
         </div>
-
-        <h4 class="text-lg font-medium text-gray-700 mb-3 text-center">Backend</h4>
-        <div class="flex flex-wrap justify-center gap-8 items-center">
-          <a href="https://nodejs.org" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={nodejs} alt="Node.js" width={60} height={60} class="tech-logo" />
+        <div class="subcategory-divider"><span>Backend</span></div>
+        <div class="tools-grid">
+          <a
+            href="https://nodejs.org"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 0ms"
+          >
+            <div class="tech-card">
+              <Image src={nodejs} alt="Node.js" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">Node.js</span>
+            </div>
           </a>
-          <a href="https://expressjs.com" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={express} alt="Express" width={60} height={60} class="tech-logo" />
+          <a
+            href="https://expressjs.com"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 50ms"
+          >
+            <div class="tech-card">
+              <Image src={express} alt="Express" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">Express</span>
+            </div>
           </a>
-          <a href="https://nestjs.com/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={nestjs} alt="NestJS" width={60} height={60} class="tech-logo" />
+          <a
+            href="https://nestjs.com/"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 100ms"
+          >
+            <div class="tech-card">
+              <Image src={nestjs} alt="NestJS" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">NestJS</span>
+            </div>
           </a>
           <a
             href="https://fastapi.tiangolo.com/"
             target="_blank"
             rel="noreferrer"
             class="tech-item"
+            style="animation-delay: 150ms"
           >
-            <Image src={fastapi} alt="FastAPI" width={60} height={60} class="tech-logo" />
+            <div class="tech-card">
+              <Image src={fastapi} alt="FastAPI" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">FastAPI</span>
+            </div>
           </a>
           <a
             href="https://www.djangoproject.com/"
             target="_blank"
             rel="noreferrer"
             class="tech-item"
+            style="animation-delay: 200ms"
           >
-            <Image src={django} alt="Django" width={60} height={60} class="tech-logo" />
+            <div class="tech-card">
+              <Image src={django} alt="Django" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">Django</span>
+            </div>
           </a>
         </div>
       </div>
 
       <!-- Mobile Development -->
-      <div class="mb-10">
-        <h3
-          class="text-xl font-semibold mb-5 text-center bg-purple-50 text-purple-800 py-2 rounded-lg"
-        >
-          Mobile Development
-        </h3>
-        <div class="flex flex-wrap justify-center gap-8 items-center">
-          <a href="https://reactnative.dev/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={reactNative} alt="React Native" width={60} height={60} class="tech-logo" />
+      <div class="mb-12">
+        <div class="category-header">
+          <div class="category-bar"></div>
+          <h3>Mobile Development</h3>
+        </div>
+        <div class="tools-grid">
+          <a
+            href="https://reactnative.dev/"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 0ms"
+          >
+            <div class="tech-card">
+              <Image
+                src={reactNative}
+                alt="React Native"
+                width={48}
+                height={48}
+                class="tech-logo"
+              />
+              <span class="tech-name">React Native</span>
+            </div>
           </a>
-          <a href="https://kotlinlang.org" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={kotlin} alt="Kotlin" width={60} height={60} class="tech-logo" />
+          <a
+            href="https://kotlinlang.org"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 50ms"
+          >
+            <div class="tech-card">
+              <Image src={kotlin} alt="Kotlin" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">Kotlin</span>
+            </div>
           </a>
-          <a href="https://expo.dev/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={expo} alt="Expo" width={60} height={60} class="tech-logo" />
+          <a
+            href="https://expo.dev/"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 100ms"
+          >
+            <div class="tech-card">
+              <Image src={expo} alt="Expo" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">Expo</span>
+            </div>
           </a>
         </div>
       </div>
 
       <!-- Database and Storage -->
-      <div class="mb-10">
-        <h3
-          class="text-xl font-semibold mb-5 text-center bg-purple-50 text-purple-800 py-2 rounded-lg"
-        >
-          Database and Storage
-        </h3>
-        <div class="flex flex-wrap justify-center gap-8 items-center">
-          <a href="https://www.mysql.com/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={mysql} alt="MySQL" width={60} height={60} class="tech-logo" />
+      <div class="mb-12">
+        <div class="category-header">
+          <div class="category-bar"></div>
+          <h3>Database and Storage</h3>
+        </div>
+        <div class="tools-grid">
+          <a
+            href="https://www.mysql.com/"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 0ms"
+          >
+            <div class="tech-card">
+              <Image src={mysql} alt="MySQL" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">MySQL</span>
+            </div>
           </a>
-          <a href="https://www.postgresql.org" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={postgresql} alt="PostgreSQL" width={60} height={60} class="tech-logo" />
+          <a
+            href="https://www.postgresql.org"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 50ms"
+          >
+            <div class="tech-card">
+              <Image src={postgresql} alt="PostgreSQL" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">PostgreSQL</span>
+            </div>
           </a>
-          <a href="https://supabase.com/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={supabase} alt="Supabase" width={60} height={60} class="tech-logo" />
+          <a
+            href="https://supabase.com/"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 100ms"
+          >
+            <div class="tech-card">
+              <Image src={supabase} alt="Supabase" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">Supabase</span>
+            </div>
           </a>
-          <a href="https://firebase.google.com/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={firebase} alt="Firebase" width={60} height={60} class="tech-logo" />
+          <a
+            href="https://firebase.google.com/"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 150ms"
+          >
+            <div class="tech-card">
+              <Image src={firebase} alt="Firebase" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">Firebase</span>
+            </div>
           </a>
-          <a href="https://redis.io" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={redis} alt="Redis" width={60} height={60} class="tech-logo" />
+          <a
+            href="https://redis.io"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 200ms"
+          >
+            <div class="tech-card">
+              <Image src={redis} alt="Redis" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">Redis</span>
+            </div>
           </a>
-          <a href="https://aws.amazon.com/s3/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={awsS3} alt="AWS S3" width={60} height={60} class="tech-logo" />
+          <a
+            href="https://aws.amazon.com/s3/"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 250ms"
+          >
+            <div class="tech-card">
+              <Image src={awsS3} alt="AWS S3" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">AWS S3</span>
+            </div>
           </a>
-          <a href="https://aws.amazon.com/rds/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={awsRds} alt="AWS RDS" width={60} height={60} class="tech-logo" />
+          <a
+            href="https://aws.amazon.com/rds/"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 300ms"
+          >
+            <div class="tech-card">
+              <Image src={awsRds} alt="AWS RDS" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">AWS RDS</span>
+            </div>
           </a>
           <a
             href="https://cloud.google.com/bigquery"
             target="_blank"
             rel="noreferrer"
             class="tech-item"
+            style="animation-delay: 350ms"
           >
-            <Image src={bigquery} alt="BigQuery" width={60} height={60} class="tech-logo" />
+            <div class="tech-card">
+              <Image src={bigquery} alt="BigQuery" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">BigQuery</span>
+            </div>
           </a>
         </div>
       </div>
 
       <!-- Other Technologies -->
       <div>
-        <h3
-          class="text-xl font-semibold mb-5 text-center bg-purple-50 text-purple-800 py-2 rounded-lg"
-        >
-          Other Technologies
-        </h3>
-
-        <h4 class="text-lg font-medium text-gray-700 mb-3 text-center">Languages</h4>
-        <div class="flex flex-wrap justify-center gap-8 items-center mb-8">
-          <a href="https://www.java.com" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={java} alt="Java" width={60} height={60} class="tech-logo" />
+        <div class="category-header">
+          <div class="category-bar"></div>
+          <h3>Other Technologies</h3>
+        </div>
+        <div class="subcategory-divider"><span>Languages</span></div>
+        <div class="tools-grid mb-6">
+          <a
+            href="https://www.java.com"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 0ms"
+          >
+            <div class="tech-card">
+              <Image src={java} alt="Java" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">Java</span>
+            </div>
           </a>
           <a
             href="https://www.cprogramming.com/"
             target="_blank"
             rel="noreferrer"
             class="tech-item"
+            style="animation-delay: 50ms"
           >
-            <Image src={c} alt="C" width={60} height={60} class="tech-logo" />
+            <div class="tech-card">
+              <Image src={c} alt="C" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">C</span>
+            </div>
           </a>
           <a
             href="https://www.w3schools.com/cpp/"
             target="_blank"
             rel="noreferrer"
             class="tech-item"
+            style="animation-delay: 100ms"
           >
-            <Image src={cplusplus} alt="C++" width={60} height={60} class="tech-logo" />
+            <div class="tech-card">
+              <Image src={cplusplus} alt="C++" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">C++</span>
+            </div>
           </a>
         </div>
-
-        <h4 class="text-lg font-medium text-gray-700 mb-3 text-center">Cloud Platforms</h4>
-        <div class="flex flex-wrap justify-center gap-8 items-center mb-8">
+        <div class="subcategory-divider"><span>Cloud Platforms</span></div>
+        <div class="tools-grid mb-6">
           <a
             href="https://azure.microsoft.com/en-in/"
             target="_blank"
             rel="noreferrer"
             class="tech-item"
+            style="animation-delay: 0ms"
           >
-            <Image src={azure} alt="Azure" width={60} height={60} class="tech-logo" />
+            <div class="tech-card">
+              <Image src={azure} alt="Azure" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">Azure</span>
+            </div>
           </a>
-          <a href="https://aws.amazon.com" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={aws} alt="AWS" width={60} height={60} class="tech-logo" />
+          <a
+            href="https://aws.amazon.com"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 50ms"
+          >
+            <div class="tech-card">
+              <Image src={aws} alt="AWS" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">AWS</span>
+            </div>
           </a>
-          <a href="https://cloud.google.com" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={gcp} alt="Google Cloud Platform" width={60} height={60} class="tech-logo" />
+          <a
+            href="https://cloud.google.com"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 100ms"
+          >
+            <div class="tech-card">
+              <Image
+                src={gcp}
+                alt="Google Cloud Platform"
+                width={48}
+                height={48}
+                class="tech-logo"
+              />
+              <span class="tech-name">Google Cloud</span>
+            </div>
           </a>
         </div>
-
-        <h4 class="text-lg font-medium text-gray-700 mb-3 text-center">UI/UX</h4>
-        <div class="flex flex-wrap justify-center gap-8 items-center">
-          <a href="https://www.figma.com/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={figma} alt="Figma" width={60} height={60} class="tech-logo" />
+        <div class="subcategory-divider"><span>UI/UX</span></div>
+        <div class="tools-grid">
+          <a
+            href="https://www.figma.com/"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 0ms"
+          >
+            <div class="tech-card">
+              <Image src={figma} alt="Figma" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">Figma</span>
+            </div>
           </a>
-          <a href="https://storybook.js.org/" target="_blank" rel="noreferrer" class="tech-item">
-            <Image src={storybook} alt="Storybook" width={60} height={60} class="tech-logo" />
+          <a
+            href="https://storybook.js.org/"
+            target="_blank"
+            rel="noreferrer"
+            class="tech-item"
+            style="animation-delay: 50ms"
+          >
+            <div class="tech-card">
+              <Image src={storybook} alt="Storybook" width={48} height={48} class="tech-logo" />
+              <span class="tech-name">Storybook</span>
+            </div>
           </a>
         </div>
       </div>
@@ -303,37 +616,147 @@ import storybook from '../assets/tech-icons/storybook-1.svg';
 </section>
 
 <style>
+  @keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Category header */
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .category-bar {
+    width: 4px;
+    height: 26px;
+    background-color: #4f1091;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .category-header h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #340b61;
+    letter-spacing: -0.01em;
+  }
+
+  /* Sub-category divider */
+  .subcategory-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 14px;
+  }
+
+  .subcategory-divider::before,
+  .subcategory-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(199, 190, 245, 0.5);
+  }
+
+  .subcategory-divider span {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #4f1091;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  /* Tool grid */
+  .tools-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: flex-start;
+  }
+
+  /* Tool item (anchor) */
   .tech-item {
-    @apply flex items-center justify-center;
-    @apply transition-all duration-300 ease-in-out;
-    @apply p-2 rounded-lg;
-    width: 80px;
-    height: 80px;
-    position: relative;
+    text-decoration: none;
+    animation: fadeUp 0.4s ease both;
   }
 
-  .tech-item:hover {
-    transform: translateY(-5px) scale(1.12);
-    filter: drop-shadow(0 6px 8px rgba(167, 139, 250, 0.3));
+  /* Tool card */
+  .tech-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 10px 12px;
+    border-radius: 12px;
+    border: 1px solid rgba(199, 190, 245, 0.35);
+    background: rgba(237, 243, 254, 0.45);
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease,
+      border-color 0.25s ease,
+      background 0.25s ease;
+    width: 90px;
+    min-height: 90px;
   }
 
+  .tech-item:hover .tech-card {
+    transform: translateY(-6px);
+    border-color: rgba(199, 190, 245, 0.85);
+    box-shadow: 0 8px 24px rgba(79, 16, 145, 0.18);
+    background: rgba(199, 190, 245, 0.2);
+  }
+
+  /* Tool logo */
   .tech-logo {
-    max-width: 60px;
-    max-height: 60px;
-    width: auto;
-    height: auto;
+    width: 48px;
+    height: 48px;
     object-fit: contain;
   }
 
+  /* Tool name label */
+  .tech-name {
+    font-size: 0.62rem;
+    font-weight: 600;
+    text-align: center;
+    color: #4f1091;
+    letter-spacing: 0.02em;
+    line-height: 1.25;
+    transition: color 0.25s ease;
+  }
+
+  .tech-item:hover .tech-name {
+    color: #340b61;
+  }
+
+  /* Mobile */
   @media (max-width: 640px) {
-    .tech-item {
-      width: 60px;
-      height: 60px;
+    .tools-grid {
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .tech-card {
+      width: 76px;
+      min-height: 80px;
+      padding: 10px 8px;
     }
 
     .tech-logo {
-      max-width: 40px;
-      max-height: 40px;
+      width: 38px;
+      height: 38px;
+    }
+
+    .tech-name {
+      font-size: 0.58rem;
     }
   }
 </style>

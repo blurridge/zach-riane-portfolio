@@ -28,6 +28,9 @@ import { experiences } from '@/data/experiences';
     </svg>
   </div>
 
+  <!-- Dot pattern overlay -->
+  <div class="dot-pattern absolute inset-0 z-0 pointer-events-none"></div>
+
   <div class="content-container py-24 md:py-32">
     <div class="container mx-auto px-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-6xl mx-auto">
@@ -116,6 +119,11 @@ import { experiences } from '@/data/experiences';
   #experience {
     margin-bottom: 0;
     padding-bottom: 0;
+  }
+
+  .dot-pattern {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+    background-size: 24px 24px;
   }
 
   .card-animation {
